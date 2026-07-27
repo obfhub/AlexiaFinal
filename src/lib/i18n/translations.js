@@ -56,12 +56,12 @@ export const translations = {
       ],
     },
     testimonials: {
-      eyebrow: “Vocile comunității”,
-      heading: “Vorbele lor, energia noastră”,
+      eyebrow: "Vocile comunității",
+      heading: "Vorbele lor, energia noastră",
       items: [
-        { name: “Cristina Alexandru”, result: “ clase în 2 luni”, quote: “Am venit pentru cycling și am rămas pentru karaoke. Ies de la fiecare clasă zâmbind.” },
-        { name: “Andrei Popa”, result: “–6 kg în 3 luni”, quote: “Nu m-am simțit niciodată că „fac sport”. Cânt, pedalez și timpul zboară.” },
-        { name: “Marina Voronin”, result: “Membre din prima săptămână”, quote: “Comunitatea e reală. Aici am găsit oameni care mă așteaptă și mă motivează.” },
+        { name: "Cristina Alexandru", result: "12 clase în 2 luni", quote: "Am venit pentru cycling și am rămas pentru karaoke. Ies de la fiecare clasă zâmbind." },
+        { name: "Andrei Popa", result: "–6 kg în 3 luni", quote: "Nu m-am simțit niciodată că „fac sport”. Cânt, pedalez și timpul zboară." },
+        { name: "Marina Voronin", result: "Membre din prima săptămână", quote: "Comunitatea e reală. Aici am găsit oameni care mă așteaptă și mă motivează." },
       ],
     },
     facility: {
@@ -330,9 +330,9 @@ export const translations = {
       eyebrow: "Голоса сообщества",
       heading: "Их слова, наша энергия",
       items: [
-        { name: "Кристина Александрова", result: "12 занятий за 2 месяца", quote: "Пришла ради cycling, осталась ради караоке. Ухожу с каждого занятия с улыбкой." },
-        { name: "Андрей Попов", result: "–6 кг за 3 месяца", quote: "Никогда не чувствовал, что «тренируюсь». Пою, кручу педали, и время летит." },
-        { name: "Марина Воронина", result: "С первой недели", quote: "Сообщество настоящее. Здесь я нашла людей, которые меня ждут и мотивируют." },
+        { name: "Cristina Alexandru", result: "12 занятий за 2 месяца", quote: "Пришла ради cycling, осталась ради караоке. Ухожу с каждого занятия с улыбкой." },
+        { name: "Andrei Popa", result: "–6 кг за 3 месяца", quote: "Никогда не чувствовал, что «тренируюсь». Пою, кручу педали, и время летит." },
+        { name: "Marina Voronin", result: "С первой недели", quote: "Сообщество настоящее. Здесь я нашла людей, которые меня ждут и мотивируют." },
       ],
     },
     facility: {
