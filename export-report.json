@@ -1,0 +1,33 @@
+{
+  "exportedAt": "2026-07-26T23:38:55.825Z",
+  "exportDurationMs": 39080,
+  "fileCount": 109,
+  "assetCount": 3,
+  "resolvedAssetCount": 0,
+  "missingAssets": [
+    {
+      "url": "https://media.db.com/images/public/6a6694c080572115c141e8b7/b47b3a1ca_generated_image.png",
+      "error": "Failed to fetch"
+    },
+    {
+      "url": "https://media.db.com/images/public/6a6694c080572115c141e8b7/bd34b99df_generated_image.png",
+      "error": "Failed to fetch"
+    },
+    {
+      "url": "https://media.db.com/images/public/6a16a83dba9e446a604c6ec7/307dbe6d0_Fitness_Gemini_3__Nano_Banana_Pro__2026-06-03_13-31-14.jpg",
+      "error": "Failed to fetch"
+    }
+  ],
+  "warnings": [
+    "Preview iframe scan failed: Failed to read a named property 'document' from 'Window': Blocked a frame with origin \"https://app.base44.com\" from accessing a cross-origin frame."
+  ],
+  "diagnostics": {
+    "exportState": "IDLE",
+    "assetCount": 3,
+    "pendingFetches": 0,
+    "pendingImages": 0,
+    "domNodeCount": 5677,
+    "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/150.0.0.0 Safari/537.36",
+    "exportDurationMs": 39081
+  }
+}

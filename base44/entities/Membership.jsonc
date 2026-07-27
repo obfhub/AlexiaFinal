@@ -1,0 +1,70 @@
+{
+  "name": "Membership",
+  "type": "object",
+  "properties": {
+    "name_ro": {
+      "type": "string",
+      "title": "Nume (RO)"
+    },
+    "name_ru": {
+      "type": "string",
+      "title": "\u041d\u0430\u0437\u0432\u0430\u043d\u0438\u0435 (RU)"
+    },
+    "price": {
+      "type": "number",
+      "title": "Price (lei)"
+    },
+    "old_price": {
+      "type": "number",
+      "title": "Old Price (lei)"
+    },
+    "billing_cycle": {
+      "type": "string",
+      "title": "Billing Cycle",
+      "enum": [
+        "Single",
+        "Monthly",
+        "Quarterly"
+      ]
+    },
+    "features_ro": {
+      "type": "array",
+      "title": "Features (RO)",
+      "items": {
+        "type": "string"
+      }
+    },
+    "features_ru": {
+      "type": "array",
+      "title": "Features (RU)",
+      "items": {
+        "type": "string"
+      }
+    },
+    "is_featured": {
+      "type": "boolean",
+      "title": "Featured Plan"
+    },
+    "classes_per_month": {
+      "type": "number",
+      "title": "Classes Per Month"
+    },
+    "price_note_ro": {
+      "type": "string",
+      "title": "Price Note (RO)"
+    },
+    "price_note_ru": {
+      "type": "string",
+      "title": "Price Note (RU)"
+    },
+    "sort_order": {
+      "type": "number",
+      "title": "Sort Order"
+    }
+  },
+  "required": [
+    "name_ro",
+    "name_ru",
+    "price"
+  ]
+}

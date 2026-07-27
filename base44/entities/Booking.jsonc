@@ -1,0 +1,43 @@
+{
+  "name": "Booking",
+  "type": "object",
+  "properties": {
+    "class_id": {
+      "type": "string",
+      "title": "Class ID"
+    },
+    "class_title": {
+      "type": "string",
+      "title": "Class Title"
+    },
+    "user_name": {
+      "type": "string",
+      "title": "User Name"
+    },
+    "user_phone": {
+      "type": "string",
+      "title": "User Phone"
+    },
+    "status": {
+      "type": "string",
+      "title": "Status",
+      "enum": [
+        "confirmed",
+        "cancelled",
+        "waitlisted"
+      ],
+      "default": "confirmed"
+    },
+    "booking_date": {
+      "type": "string",
+      "title": "Booking Date",
+      "format": "date-time"
+    }
+  },
+  "required": [
+    "class_id",
+    "class_title",
+    "user_name",
+    "user_phone"
+  ]
+}

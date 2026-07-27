@@ -1,0 +1,70 @@
+{
+  "name": "Instructor",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "title": "Full Name"
+    },
+    "title_ro": {
+      "type": "string",
+      "title": "Title (RO)"
+    },
+    "title_ru": {
+      "type": "string",
+      "title": "Title (RU)"
+    },
+    "bio_ro": {
+      "type": "string",
+      "title": "Biography (RO)"
+    },
+    "bio_ru": {
+      "type": "string",
+      "title": "Biography (RU)"
+    },
+    "philosophy_ro": {
+      "type": "string",
+      "title": "Philosophy Quote (RO)"
+    },
+    "philosophy_ru": {
+      "type": "string",
+      "title": "Philosophy Quote (RU)"
+    },
+    "specialties_ro": {
+      "type": "array",
+      "title": "Specialties (RO)",
+      "items": {
+        "type": "string"
+      }
+    },
+    "specialties_ru": {
+      "type": "array",
+      "title": "Specialties (RU)",
+      "items": {
+        "type": "string"
+      }
+    },
+    "certifications": {
+      "type": "array",
+      "title": "Certifications",
+      "items": {
+        "type": "string"
+      }
+    },
+    "image_url": {
+      "type": "string",
+      "title": "Photo URL"
+    },
+    "sort_order": {
+      "type": "number",
+      "title": "Sort Order"
+    }
+  },
+  "required": [
+    "name",
+    "title_ro",
+    "title_ru",
+    "bio_ro",
+    "bio_ru"
+  ]
+}

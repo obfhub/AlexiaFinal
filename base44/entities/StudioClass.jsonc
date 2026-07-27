@@ -1,0 +1,87 @@
+{
+  "name": "StudioClass",
+  "type": "object",
+  "properties": {
+    "title_ro": {
+      "type": "string",
+      "title": "Class Name (RO)"
+    },
+    "title_ru": {
+      "type": "string",
+      "title": "Class Name (RU)"
+    },
+    "type": {
+      "type": "string",
+      "title": "Type",
+      "enum": [
+        "Karaoke Ride",
+        "Rhythm Ride",
+        "Power Ride",
+        "Chill Ride"
+      ]
+    },
+    "intensity": {
+      "type": "string",
+      "title": "Intensity",
+      "enum": [
+        "Low",
+        "Medium",
+        "High"
+      ]
+    },
+    "description_ro": {
+      "type": "string",
+      "title": "Description (RO)"
+    },
+    "description_ru": {
+      "type": "string",
+      "title": "Description (RU)"
+    },
+    "instructor_name": {
+      "type": "string",
+      "title": "Instructor"
+    },
+    "day_of_week": {
+      "type": "string",
+      "title": "Day",
+      "enum": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ]
+    },
+    "start_time": {
+      "type": "string",
+      "title": "Start Time"
+    },
+    "end_time": {
+      "type": "string",
+      "title": "End Time"
+    },
+    "capacity": {
+      "type": "number",
+      "title": "Capacity"
+    },
+    "spots_taken": {
+      "type": "number",
+      "title": "Spots Taken"
+    },
+    "image_url": {
+      "type": "string",
+      "title": "Image URL"
+    }
+  },
+  "required": [
+    "title_ro",
+    "title_ru",
+    "type",
+    "intensity",
+    "day_of_week",
+    "start_time",
+    "end_time"
+  ]
+}
