@@ -208,6 +208,20 @@ export const translations = {
         { heading: "Cereri și sesizări", text: "Dacă întâmpini o problemă de accesibilitate sau ai nevoie de asistență, contactează-ne la salut@alexiafitness.md sau +373 60 000 000." },
       ],
     },
+    choosePlan: {
+      heading: "Alege-ți abonamentul",
+      subtitle: "Selectează planul care se potrivește cel mai bine nevoilor tale și completează formularul.",
+      selectButton: "Selectează acest plan",
+    },
+    contactForm: {
+      heading: "Rezervă o clasă",
+      subtitle: "Completează formularul și te vom contacta cu cea mai bună ofertă pentru tine.",
+      planSelected: "Plan selectat",
+      success: "Mulțumim!",
+      successMessage: "Vom reveni cu o ofertă specială pentru tine.",
+      error: "Eroare",
+      errorMessage: "Ceva a mers prost. Încercați din nou.",
+    },
   },
 
   ru: {
@@ -418,6 +432,20 @@ export const translations = {
         { heading: "Адаптации на сайте", text: "Мы адаптировали сайт по рекомендациям WCAG, сделав содержимое совместимым с экранными читалками и клавиатурной навигацией: чёткая структура заголовков, альт-текст для изображений, контрастные цвета и меньше движения." },
         { heading: "Обращения и замечания", text: "Если столкнулись с проблемой доступности или нужна помощь, напишите на salut@alexiafitness.md или +373 60 000 000." },
       ],
+    },
+    choosePlan: {
+      heading: "Выбери абонемент",
+      subtitle: "Выбери план, который лучше всего подходит твоим потребностям, и заполни форму.",
+      selectButton: "Выбрать этот план",
+    },
+    contactForm: {
+      heading: "Забронировать занятие",
+      subtitle: "Заполни форму, и мы свяжемся с тобой с лучшим предложением.",
+      planSelected: "Выбранный план",
+      success: "Спасибо!",
+      successMessage: "Мы вернёмся к тебе со специальным предложением.",
+      error: "Ошибка",
+      errorMessage: "Что-то пошло не так. Попробуй ещё раз.",
     },
   },
 };

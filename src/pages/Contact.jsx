@@ -21,12 +21,12 @@ export default function Contact() {
       await new Promise(resolve => setTimeout(resolve, 800));
 
       toast({
-        title: "Mulțumim!",
-        description: "Vom reveni cu o ofertă specială pentru tine.",
+        title: t.contactForm.success,
+        description: t.contactForm.successMessage,
       });
       setFormData({ name: "", phone: "" });
     } catch (error) {
-      toast({ title: "Error", description: "Ceva a mers prost. Încercați din nou." });
+      toast({ title: t.contactForm.error, description: t.contactForm.errorMessage });
     } finally {
       setLoading(false);
     }
@@ -42,10 +42,10 @@ export default function Contact() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}>
             <h1 className="font-heading text-5xl md:text-7xl font-light leading-tight">
-              Rezervă o clasă
+              {t.contactForm.heading}
             </h1>
             <p className="mt-4 text-sm md:text-base opacity-70 max-w-lg leading-relaxed">
-              Completează formularul și te vom contacta cu cea mai bună ofertă pentru tine.
+              {t.contactForm.subtitle}
             </p>
           </motion.div>
         </div>
@@ -60,7 +60,7 @@ export default function Contact() {
               animate={{ opacity: 1, y: 0 }}
               className="mb-6 p-4 rounded-lg bg-accent/10 border border-accent/20">
               <p className="text-xs tracking-[0.1em] uppercase font-medium text-accent mb-1">
-                Plan selectat
+                {t.contactForm.planSelected}
               </p>
               <p className="font-heading text-lg text-primary">{selectedPlan}</p>
               <p className="text-sm text-muted-foreground mt-1">{selectedPrice} lei</p>

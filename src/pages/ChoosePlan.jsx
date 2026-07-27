@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Check } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const MEMBERSHIP_PLANS = [
   {
@@ -34,6 +35,8 @@ const MEMBERSHIP_PLANS = [
 ];
 
 export default function ChoosePlan() {
+  const { t } = useLanguage();
+
   return (
     <div>
       {/* Hero */}
@@ -44,10 +47,10 @@ export default function ChoosePlan() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}>
             <h1 className="font-heading text-5xl md:text-7xl font-light leading-tight">
-              Alege-ți abonamentul
+              {t.choosePlan.heading}
             </h1>
             <p className="mt-4 text-sm md:text-base opacity-70 max-w-lg leading-relaxed">
-              Selectează planul care se potrivește cel mai bine nevoilor tale și completeaza formularul.
+              {t.choosePlan.subtitle}
             </p>
           </motion.div>
         </div>
@@ -121,7 +124,7 @@ export default function ChoosePlan() {
                       : "bg-primary text-primary-foreground hover:tracking-[0.15em]"
                   }`}
                 >
-                  Selectează acest plan
+                  {t.choosePlan.selectButton}
                 </Link>
               </motion.div>
             ))}
