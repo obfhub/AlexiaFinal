@@ -79,7 +79,7 @@ export default function Pricing() {
             </p>
           </div>
           <Link
-            to="/classes"
+            to="/choose-plan"
             className="group inline-flex items-center gap-3 bg-primary text-primary-foreground px-6 py-2.5 text-xs tracking-[0.1em] uppercase font-medium transition-all duration-300 hover:tracking-[0.2em] flex-shrink-0 rounded"
           >
             {t.pricing.dealButton}

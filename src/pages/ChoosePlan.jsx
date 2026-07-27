@@ -107,6 +107,70 @@ export default function ChoosePlan() {
         </div>
       </section>
 
+      {/* Free Class CTA Section */}
+      <section className="py-20 md:py-28 px-6 md:px-[8vw]" style={{ background: "linear-gradient(135deg, #FFE9D9 0%, #FBFBFA 100%)" }}>
+        <div className="max-w-[1400px] mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="flex flex-col items-center text-center gap-8">
+            {/* Decorative wave */}
+            <motion.svg
+              width="64"
+              height="32"
+              viewBox="0 0 64 32"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              initial={{ opacity: 0, y: -10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.1 }}>
+              <path
+                d="M4 16 Q 12 4, 20 16 T 36 16 T 52 16"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                fill="none"
+                className="text-accent" />
+            </motion.svg>
+
+            <motion.div
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.2 }}>
+              <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-black text-primary leading-tight" style={{ color: "#161312" }}>
+                {t.freeClass.heading}
+              </h2>
+            </motion.div>
+
+            <motion.p
+              className="font-body text-sm md:text-base max-w-lg leading-relaxed mx-auto"
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              style={{ color: "#161312", opacity: 0.8 }}>
+              {t.freeClass.text}
+            </motion.p>
+
+            <motion.div
+              initial={{ opacity: 0, y: 10 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6, delay: 0.4 }}>
+              <Link
+                to="/choose-plan"
+                className="group inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3.5 text-xs tracking-[0.1em] uppercase font-bold transition-all duration-300 hover:tracking-[0.2em] rounded">
+                {t.freeClass.button}
+              </Link>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Plan Selection */}
       <section className="py-16 md:py-24 px-6 md:px-[8vw]">
         <div className="max-w-[1400px] mx-auto">
