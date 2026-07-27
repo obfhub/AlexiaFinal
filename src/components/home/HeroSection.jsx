@@ -12,6 +12,10 @@ export default function HeroSection({ heroImage }) {
   const heroBoundary = 150;
 
   useEffect(() => {
+    // Only enable parallax on larger screens
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) return;
+
     const handleScroll = () => {
       if (!sectionRef.current || !imgRef.current) return;
 
