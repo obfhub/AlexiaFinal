@@ -221,6 +221,11 @@ export const translations = {
         { heading: "Cereri și sesizări", text: "Dacă întâmpini o problemă de accesibilitate sau ai nevoie de asistență, contactează-ne la salut@alexiafitness.md sau +373 60 000 000." },
       ],
     },
+    freeClass: {
+      heading: "Primă ta clasă gratuită",
+      text: "Intră în atmosfera Alexia. Pedalează, cântă și simte energia înainte să te decizi. Fără obligații, fără presiune — doar pură descoperire.",
+      button: "Rezervă prima clasă",
+    },
     choosePlan: {
       eyebrow: "Planuri de Membru",
       heading: "Alege-ți abonamentul",
@@ -491,6 +496,11 @@ export const translations = {
         { heading: "Адаптации на сайте", text: "Мы адаптировали сайт по рекомендациям WCAG, сделав содержимое совместимым с экранными читалками и клавиатурной навигацией: чёткая структура заголовков, альт-текст для изображений, контрастные цвета и меньше движения." },
         { heading: "Обращения и замечания", text: "Если столкнулись с проблемой доступности или нужна помощь, напишите на salut@alexiafitness.md или +373 60 000 000." },
       ],
+    },
+    freeClass: {
+      heading: "Первое занятие бесплатно",
+      text: "Окунись в атмосферу Alexia. Крути педали, пой и почувствуй энергию, прежде чем решить. Никаких обязательств, никакого давления — только чистое открытие.",
+      button: "Забронировать первое занятие",
     },
     choosePlan: {
       eyebrow: "Выбор плана",

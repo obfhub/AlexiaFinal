@@ -162,7 +162,7 @@ export default function ChoosePlan() {
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.4 }}>
               <Link
-                to="/choose-plan"
+                to="/contact"
                 className="group inline-flex items-center gap-2 bg-primary text-primary-foreground px-8 py-3.5 text-xs tracking-[0.1em] uppercase font-bold transition-all duration-300 hover:tracking-[0.2em] rounded">
                 {t.freeClass.button}
               </Link>

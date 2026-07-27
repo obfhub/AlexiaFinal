@@ -6,7 +6,7 @@ import TypewriterText from "../TypewriterText";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export default function HeroSection({ heroImage }) {
-  const { t } = useLanguage();
+  const { t, lang } = useLanguage();
   const sectionRef = useRef(null);
   const imgRef = useRef(null);
   const heroBoundary = 150;
@@ -80,7 +80,7 @@ export default function HeroSection({ heroImage }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}>
             <h1 className="font-heading text-5xl md:text-6xl font-extralight text-accent leading-none tracking-tighter" style={{ letterSpacing: "-0.02em" }}>
-              <TypewriterText delay={0.5}>{t.hero.line1}</TypewriterText>
+              <TypewriterText key={`line1-${lang}`} delay={0.5}>{t.hero.line1}</TypewriterText>
             </h1>
           </motion.div>
           <motion.div
@@ -88,7 +88,7 @@ export default function HeroSection({ heroImage }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}>
             <h1 className="font-heading text-5xl md:text-6xl font-extralight text-primary-foreground leading-none tracking-tighter" style={{ letterSpacing: "-0.02em" }}>
-              <TypewriterText delay={0.9}>{t.hero.line2}</TypewriterText>
+              <TypewriterText key={`line2-${lang}`} delay={0.9}>{t.hero.line2}</TypewriterText>
             </h1>
           </motion.div>
         </div>
@@ -100,7 +100,7 @@ export default function HeroSection({ heroImage }) {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
             className="font-heading text-6xl md:text-[9vw] lg:text-[8.5vw] font-extralight text-accent leading-tight tracking-tighter" style={{ letterSpacing: "-0.025em", textWrap: "balance" }}>
-            <TypewriterText delay={0.5}>{t.hero.line1}</TypewriterText>
+            <TypewriterText key={`desktop-line1-${lang}`} delay={0.5}>{t.hero.line1}</TypewriterText>
           </motion.h1>
         </div>
       </motion.div>
@@ -112,7 +112,7 @@ export default function HeroSection({ heroImage }) {
         transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
         className="absolute hidden md:block right-[8vw] bottom-48">
         <h1 className="font-heading text-6xl md:text-[9vw] lg:text-[8.5vw] font-extralight text-primary-foreground leading-none tracking-tighter text-right" style={{ letterSpacing: "-0.025em" }}>
-          <TypewriterText delay={0.9}>{t.hero.line2}</TypewriterText>
+          <TypewriterText key={`desktop-line2-${lang}`} delay={0.9}>{t.hero.line2}</TypewriterText>
         </h1>
       </motion.div>
 
