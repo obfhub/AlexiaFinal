@@ -78,7 +78,6 @@ export default function Header() {
               src={LOGO_URL}
               alt="Alexia Fitness Club"
               className="h-9 md:h-10 w-auto object-contain"
-              style={{ filter: scrolled ? "none" : "brightness(0) invert(1)" }}
             />
           </Link>
         </div>
