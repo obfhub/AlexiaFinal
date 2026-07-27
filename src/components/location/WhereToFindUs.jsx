@@ -1,26 +1,9 @@
-import { MapContainer, TileLayer, Marker, Popup } from 'react-leaflet';
 import { motion } from 'framer-motion';
 import { MapPin, Phone } from 'lucide-react';
-import L from 'leaflet';
-import 'leaflet/dist/leaflet.css';
-import { useLanguage } from '@/lib/i18n/LanguageContext';
-
-// Custom marker icon
-const customIcon = new L.Icon({
-  iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-ff6b35.png',
-  iconSize: [25, 41],
-  iconAnchor: [12, 41],
-  popupAnchor: [1, -34],
-});
 
 export default function WhereToFindUs() {
-  const { t } = useLanguage();
-
-  // Coordinates for Iuri Gagarin blvd, Chișinău
-  const coordinates = [47.4129, 28.3638];
-
   return (
-    <section className="w-full py-16 md:py-24 px-6 md:px-[8vw] bg-background">
+    <section className="w-full py-16 md:py-24 px-6 md:px-[8vw] bg-secondary/10">
       <div className="max-w-[1400px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -37,31 +20,22 @@ export default function WhereToFindUs() {
         </motion.div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Map */}
+          {/* Google Map */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="lg:col-span-2 rounded-2xl overflow-hidden shadow-lg">
-            <MapContainer
-              center={coordinates}
-              zoom={15}
-              style={{ height: '450px', width: '100%' }}
-              className="rounded-2xl">
-              <TileLayer
-                url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-              />
-              <Marker position={coordinates} icon={customIcon}>
-                <Popup>
-                  <div className="text-center">
-                    <h3 className="font-bold text-primary mb-1">ALEXIA Fitness & Wellness</h3>
-                    <p className="text-sm text-muted-foreground">bd. Iuri Gagarin 14, Chișinău</p>
-                  </div>
-                </Popup>
-              </Marker>
-            </MapContainer>
+            className="lg:col-span-2 rounded-2xl overflow-hidden shadow-lg bg-secondary p-4">
+            <iframe
+              width="100%"
+              height="450"
+              style={{ border: 'none', borderRadius: '1rem' }}
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2735.8567890123456!2d28.3638!3d47.4129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97b8e0000001%3A0x1234567890abcdef!2sbd.%20Iuri%20Gagarin%2014%2C%20Chi%C8%99in%C4%83u%2C%20Moldova!5e0!3m2!1sen!2s!4v1234567890"
+              allowFullScreen
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            />
           </motion.div>
 
           {/* Info Cards */}

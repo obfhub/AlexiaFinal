@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { Check } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import WhereToFindUs from "@/components/location/WhereToFindUs";
 
 const MEMBERSHIP_PLANS = [
   {
@@ -131,6 +132,9 @@ export default function ChoosePlan() {
           </div>
         </div>
       </section>
+
+      {/* Where to Find Us Section */}
+      <WhereToFindUs />
     </div>
   );
 }
