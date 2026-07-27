@@ -3,8 +3,10 @@ import { Link, useLocation } from "react-router-dom";
 
 import { motion, AnimatePresence } from "framer-motion";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import { useIsMobile } from "@/hooks/use-mobile";
 
 const LOGO_URL = "https://media.base44.com/images/public/6a6694c080572115c141e8b7/a38dd74cd_logo.png";
+const LOGO_MOBILE_URL = "/image.png";
 
 export default function Header() {
   const { t, lang, changeLanguage, languages } = useLanguage();
@@ -13,6 +15,7 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [mouseAtTop, setMouseAtTop] = useState(false);
   const location = useLocation();
+  const isMobile = useIsMobile();
 
   const NAV_LINKS = [
     { label: t.nav.home, path: "/" },
@@ -75,7 +78,7 @@ export default function Header() {
         <div className="absolute left-1/2 -translate-x-1/2">
           <Link to="/" className="inline-flex items-center justify-center" style={{ height: "40px" }}>
             <img
-              src={LOGO_URL}
+              src={isMobile && scrolled ? LOGO_MOBILE_URL : LOGO_URL}
               alt="Alexia Fitness Club"
               className="h-9 md:h-10 w-auto object-contain"
             />
