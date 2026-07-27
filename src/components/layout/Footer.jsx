@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, Instagram } from "lucide-react";
+import { MapPin, Phone, Mail, Instagram, Facebook, ExternalLink } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const LOGO_URL = "https://media.base44.com/images/public/6a6694c080572115c141e8b7/a38dd74cd_logo.png";
@@ -17,13 +17,16 @@ export default function Footer() {
 
       <div className="px-6 md:px-[8vw] py-8 md:py-16">
 
-        {/* Links & Details row */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 md:gap-8">
-          {/* Brand tagline + reserve button */}
+        {/* Links & Details row - 4 columns */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8 mb-12">
+          {/* Brand info */}
           <div className="flex flex-col gap-5">
-            <p className="font-body text-sm leading-relaxed max-w-xs">
-              {t.contact.tagline}
-            </p>
+            <div>
+              <h3 className="font-heading text-lg font-light mb-2">ALEXIA Fitness & Wellness</h3>
+              <p className="font-body text-sm leading-relaxed text-white/80">
+                {t.footerBrand.description}
+              </p>
+            </div>
             <Link
               to="/choose-plan"
               className="group inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-2.5 text-xs tracking-[0.1em] uppercase font-medium transition-all duration-300 hover:tracking-[0.2em] flex-shrink-0 rounded w-fit"
@@ -34,7 +37,7 @@ export default function Footer() {
 
           {/* Navigation */}
           <div>
-            <p className="text-xs tracking-[0.3em] uppercase mb-6">{t.contact.navigate}</p>
+            <p className="text-xs tracking-[0.3em] uppercase mb-6 font-medium">{t.contact.navigate}</p>
             <div className="flex flex-col gap-3">
               {[
               { label: t.nav.classes, path: "/classes" },
@@ -44,34 +47,62 @@ export default function Footer() {
               <Link
                 key={link.path}
                 to={link.path}
-                className="text-sm transition-opacity tracking-wide">
-                
+                className="text-sm transition-opacity hover:text-accent">
+
                   {link.label}
                 </Link>
               )}
             </div>
           </div>
 
-          {/* Contact */}
+          {/* Social & Contact */}
           <div>
-            <p className="text-xs tracking-[0.3em] uppercase mb-6">{t.contact.connect}</p>
+            <p className="text-xs tracking-[0.3em] uppercase mb-6 font-medium">{t.footerBrand.social}</p>
             <div className="flex flex-col gap-3 text-sm">
-              <div className="flex items-center gap-3">
-                <MapPin className="w-4 h-4 flex-shrink-0" />
-                <span>{t.contact.address}</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Phone className="w-4 h-4 flex-shrink-0" />
-                <span>{t.contact.phone}</span>
-              </div>
-              <div className="flex items-center gap-3">
-                <Mail className="w-4 h-4 flex-shrink-0" />
-                <span>{t.contact.email}</span>
-              </div>
-              <div className="flex items-center gap-3 mt-2">
+              <a href="#" className="flex items-center gap-2 hover:text-accent transition-colors">
                 <Instagram className="w-4 h-4 flex-shrink-0" />
-                <span>{t.contact.instagram}</span>
+                <span>{t.footerBrand.instagram}</span>
+              </a>
+              <a href="#" className="flex items-center gap-2 hover:text-accent transition-colors">
+                <Facebook className="w-4 h-4 flex-shrink-0" />
+                <span>{t.footerBrand.facebook}</span>
+              </a>
+            </div>
+            <div className="border-t border-white/20 my-6 pt-6">
+              <p className="text-xs tracking-[0.3em] uppercase mb-3 font-medium">{t.contact.connect}</p>
+              <div className="flex flex-col gap-3 text-sm">
+                <div className="flex items-start gap-3">
+                  <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5" />
+                  <span>{t.contact.address}</span>
+                </div>
+                <div className="flex items-center gap-3">
+                  <Phone className="w-4 h-4 flex-shrink-0" />
+                  <a href="tel:+37379414017" className="hover:text-accent transition-colors">{t.contact.phone}</a>
+                </div>
               </div>
+            </div>
+          </div>
+
+          {/* Hours & Website */}
+          <div>
+            <p className="text-xs tracking-[0.3em] uppercase mb-6 font-medium">{t.footerBrand.programHeading}</p>
+            <div className="flex flex-col gap-3 text-sm mb-6">
+              <div>
+                <p className="font-medium text-white/90">{t.footerBrand.weekdays}</p>
+              </div>
+              <div>
+                <p className="font-medium text-white/90">{t.footerBrand.weekend}</p>
+              </div>
+            </div>
+            <div className="border-t border-white/20 pt-6">
+              <a
+                href="https://alexia.md"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-accent/80 transition-colors">
+                {t.footerBrand.website}
+                <ExternalLink className="w-3.5 h-3.5" />
+              </a>
             </div>
           </div>
         </div>
