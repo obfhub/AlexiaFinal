@@ -13,11 +13,11 @@ export default function Footer() {
       <div className="px-6 md:px-[8vw] py-8 md:py-16">
 
         {/* Links & Details row - 4 columns */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8 mb-12">
+        <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-12">
           {/* Brand info */}
-          <div className="flex flex-col gap-5">
+          <div className="flex flex-col gap-5 col-span-2 md:col-span-1">
             <div className="flex flex-col gap-3">
-              <img src={LOGO_URL} alt="Alexia Fitness Club" className="w-32 md:w-40 h-auto object-contain" />
+              <img src={LOGO_URL} alt="Alexia Fitness Club" className="w-24 md:w-40 h-auto object-contain" />
               <p className="font-body text-sm leading-relaxed text-white/80">
                 {t.footerBrand.description}
               </p>
@@ -31,9 +31,9 @@ export default function Footer() {
           </div>
 
           {/* Navigation */}
-          <div>
-            <p className="text-xs tracking-[0.3em] uppercase mb-6 font-medium">{t.contact.navigate}</p>
-            <div className="flex flex-col gap-3">
+          <div className="col-span-1">
+            <p className="text-xs tracking-[0.3em] uppercase mb-3 md:mb-6 font-medium">{t.contact.navigate}</p>
+            <div className="flex flex-col gap-2 md:gap-3 text-sm md:text-base">
               {[
                 { label: t.nav.home, path: "/" },
                 { label: t.nav.classes, path: "/classes#schedule" },
@@ -53,9 +53,9 @@ export default function Footer() {
           </div>
 
           {/* Social & Contact */}
-          <div>
-            <p className="text-xs tracking-[0.3em] uppercase mb-6 font-medium">{t.footerBrand.social}</p>
-            <div className="flex flex-col gap-3 text-sm">
+          <div className="col-span-1">
+            <p className="text-xs tracking-[0.3em] uppercase mb-3 md:mb-6 font-medium">{t.footerBrand.social}</p>
+            <div className="flex flex-col gap-2 md:gap-3 text-xs md:text-sm">
               <a href="https://www.instagram.com/alexiafitnesswellnessclub?igsh=YjJ6azlsY3NoNGI1" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-accent transition-colors">
                 <Instagram className="w-4 h-4 flex-shrink-0" />
                 <span>{t.footerBrand.instagram}</span>
@@ -73,9 +73,9 @@ export default function Footer() {
                 <span>WhatsApp</span>
               </a>
             </div>
-            <div className="border-t border-white/20 my-6 pt-6">
-              <p className="text-xs tracking-[0.3em] uppercase mb-3 font-medium">{t.contact.connect}</p>
-              <div className="flex flex-col gap-3 text-sm">
+            <div className="border-t border-white/20 my-3 md:my-6 pt-3 md:pt-6">
+              <p className="text-xs tracking-[0.3em] uppercase mb-2 md:mb-3 font-medium">{t.contact.connect}</p>
+              <div className="flex flex-col gap-2 md:gap-3 text-xs md:text-sm">
                 <div className="flex items-start gap-3">
                   <MapPin className="w-4 h-4 flex-shrink-0 mt-0.5" />
                   <span>{t.contact.address}</span>
@@ -89,9 +89,9 @@ export default function Footer() {
           </div>
 
           {/* Hours & Website */}
-          <div>
-            <p className="text-xs tracking-[0.3em] uppercase mb-6 font-medium">{t.footerBrand.programHeading}</p>
-            <div className="flex flex-col gap-3 text-sm mb-6">
+          <div className="col-span-2 md:col-span-1">
+            <p className="text-xs tracking-[0.3em] uppercase mb-3 md:mb-6 font-medium">{t.footerBrand.programHeading}</p>
+            <div className="flex flex-col gap-2 md:gap-3 text-xs md:text-sm mb-3 md:mb-6">
               <div>
                 <p className="font-medium text-white/90">{t.footerBrand.weekdays}</p>
               </div>
@@ -99,12 +99,12 @@ export default function Footer() {
                 <p className="font-medium text-white/90">{t.footerBrand.weekend}</p>
               </div>
             </div>
-            <div className="border-t border-white/20 pt-6">
+            <div className="border-t border-white/20 pt-3 md:pt-6">
               <a
                 href="https://alexia.md"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-accent/80 transition-colors">
+                className="inline-flex items-center gap-2 text-xs md:text-sm font-medium text-accent hover:text-accent/80 transition-colors">
                 {t.footerBrand.website}
                 <ExternalLink className="w-3.5 h-3.5" />
               </a>
