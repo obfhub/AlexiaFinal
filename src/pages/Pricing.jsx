@@ -1,10 +1,9 @@
-import { useState, useEffect } from "react";
-
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, Check } from "lucide-react";
 import TypewriterText from "../components/TypewriterText";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
+import WhereToFindUs from "../components/location/WhereToFindUs";
 
 const MEMBERSHIP_PLANS = [
   {
@@ -177,6 +176,9 @@ export default function Pricing() {
           </div>
         </div>
       </section>
+
+      {/* Where to Find Us Map */}
+      <WhereToFindUs />
 
       {/* Policies */}
       <section className="py-16 md:py-24 px-6 md:px-[8vw]">
