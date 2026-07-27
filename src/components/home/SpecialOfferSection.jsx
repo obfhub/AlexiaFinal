@@ -34,7 +34,7 @@ export default function SpecialOfferSection() {
           borderRadius: "50% 50% 0 0 / 100% 100% 0 0",
           background: "linear-gradient(to top, #FB8E56, #FC7537)",
           filter: "blur(70px)",
-          opacity: 0.35,
+          opacity: 0.6,
         }}
       />
 
