@@ -76,7 +76,7 @@ export default function Header() {
         <div className="absolute left-1/2 -translate-x-1/2">
           <Link to="/" className="inline-flex items-center justify-center" style={{ height: "40px" }}>
             <img
-              src={scrolled ? SCROLLED_LOGO_URL : LOGO_URL}
+              src={scrolled || mobileOpen ? SCROLLED_LOGO_URL : LOGO_URL}
               alt="Alexia Fitness Club"
               className="h-9 md:h-10 w-auto object-contain"
             />
