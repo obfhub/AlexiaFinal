@@ -19,10 +19,10 @@ export default function ClassVarietiesSection({ images }) {
           transition={{ duration: 0.7 }}
           className="md:sticky top-24 self-start h-fit">
           
-          <p className="text-xs tracking-[0.3em] uppercase font-body text-primary mb-4">
+          <p className="text-xs tracking-[0.3em] uppercase font-body text-primary mb-4 font-bold">
             {t.classes.eyebrow}
           </p>
-          <h2 className="font-heading text-3xl md:text-4xl lg:text-5xl font-light leading-tight tracking-tight text-left max-w-sm">
+          <h2 className="font-heading text-4xl md:text-5xl lg:text-6xl font-black leading-tight tracking-tight text-left max-w-sm">
             {t.classes.heading}
           </h2>
           <div className="mt-8">
