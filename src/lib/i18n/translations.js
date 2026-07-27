@@ -59,7 +59,7 @@ export const translations = {
       eyebrow: “Vocile comunității”,
       heading: “Vorbele lor, energia noastră”,
       items: [
-        { name: “Cristina Alexandru”, result: “12 clase în 2 luni”, quote: “Am venit pentru cycling și am rămas pentru karaoke. Ies de la fiecare clasă zâmbind.” },
+        { name: “Cristina Alexandru”, result: “ clase în 2 luni”, quote: “Am venit pentru cycling și am rămas pentru karaoke. Ies de la fiecare clasă zâmbind.” },
         { name: “Andrei Popa”, result: “–6 kg în 3 luni”, quote: “Nu m-am simțit niciodată că „fac sport”. Cânt, pedalez și timpul zboară.” },
         { name: “Marina Voronin”, result: “Membre din prima săptămână”, quote: “Comunitatea e reală. Aici am găsit oameni care mă așteaptă și mă motivează.” },
       ],
