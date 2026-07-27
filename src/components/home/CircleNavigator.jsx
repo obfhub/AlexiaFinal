@@ -45,7 +45,7 @@ export default function CircleNavigator() {
   return (
     <div className="flex flex-col items-start gap-8 mt-16 ml-6">
       {/* Bicycle wheel */}
-      <div className="relative w-48 h-48 flex items-center justify-start">
+      <div className="relative w-48 h-48 flex items-center justify-start hidden md:flex">
         {/* Bicycle wheel image */}
         <img
           src="/noun-bicycle-wheel-3644758.svg"
