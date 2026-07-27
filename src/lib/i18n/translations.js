@@ -56,12 +56,12 @@ export const translations = {
       ],
     },
     testimonials: {
-      eyebrow: "Vocile comunității",
-      heading: "Vorbele lor, energia noastră",
+      eyebrow: “Vocile comunității”,
+      heading: “Vorbele lor, energia noastră”,
       items: [
-        { name: "Ioana G.", result: "12 clase în 2 luni", quote: "Am venit pentru cycling și am rămas pentru karaoke. Ies de la fiecare clasă zâmbind." },
-        { name: "Radu P.", result: "–6 kg în 3 luni", quote: "Nu m-am simțit niciodată că „fac sport”. Cânt, pedalez și timpul zboară." },
-        { name: "Cristina D.", result: "Membre din prima săptămână", quote: "Comunitatea e reală. Aici am găsit oameni care mă așteaptă și mă motivează." },
+        { name: “Наталья К.”, result: “12 clase în 2 luni”, quote: “Am venit pentru cycling și am rămas pentru karaoke. Ies de la fiecare clasă zâmbind.” },
+        { name: “Сергей М.”, result: “–6 kg în 3 luni”, quote: “Nu m-am simțit niciodată că „fac sport”. Cânt, pedalez și timpul zboară.” },
+        { name: “Елена В.”, result: “Membre din prima săptămână”, quote: “Comunitatea e reală. Aici am găsit oameni care mă așteaptă și mă motivează.” },
       ],
     },
     facility: {
