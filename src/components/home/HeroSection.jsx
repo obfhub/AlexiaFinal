@@ -11,11 +11,25 @@ export default function HeroSection({ heroImage }) {
   const heroBoundary = 150;
 
   useEffect(() => {
+    let rafId = 0;
+    let lastScrollY = 0;
+
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      if (rafId) cancelAnimationFrame(rafId);
+
+      rafId = requestAnimationFrame(() => {
+        if (window.scrollY !== lastScrollY) {
+          lastScrollY = window.scrollY;
+          setScrollY(window.scrollY);
+        }
+      });
     };
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (rafId) cancelAnimationFrame(rafId);
+    };
   }, []);
 
   const roundness = Math.min(28, scrollY / heroBoundary * 28);
