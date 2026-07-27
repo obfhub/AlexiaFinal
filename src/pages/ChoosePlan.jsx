@@ -4,33 +4,27 @@ import { Check } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 import WhereToFindUs from "@/components/location/WhereToFindUs";
 
-const MEMBERSHIP_PLANS = [
+// Base plan data (language-agnostic pricing and structure)
+const PLAN_CONFIG = [
   {
     id: 1,
-    title: "Ședință individuală",
     price: "350",
     currency: "lei",
-    description: "O sesiune pentru a testa",
-    features: ["Acces la o ședință", "Consultant gratuit", "Recomandări personalizate"],
+    oldPrice: null,
     recommended: false,
   },
   {
     id: 3,
-    title: "Abonament 3 luni",
     price: "3000",
     currency: "lei",
     oldPrice: "4000",
-    description: "O ședință doar 250 lei",
-    features: ["Acces nelimitat 3 luni", "Consultant personal dedicat", "Prioritate la rezervări", "Reducere 25%"],
     recommended: true,
   },
   {
     id: 2,
-    title: "Abonament lunar",
     price: "1200",
     currency: "lei",
-    description: "Pentru începatoare",
-    features: ["Acces nelimitat o lună", "Consultant personal", "Acces la comunitate"],
+    oldPrice: null,
     recommended: false,
   },
 ];
@@ -38,21 +32,77 @@ const MEMBERSHIP_PLANS = [
 export default function ChoosePlan() {
   const { t } = useLanguage();
 
+  // Build plans from translation data combined with pricing config
+  const MEMBERSHIP_PLANS = t.choosePlan.plans.map((plan, idx) => ({
+    ...PLAN_CONFIG[idx],
+    title: plan.title,
+    description: plan.description,
+    features: plan.features,
+  }));
+
   return (
     <div>
       {/* Hero */}
-      <section className="bg-primary text-primary-foreground pt-36 pb-20 md:pt-44 md:pb-28 px-6 md:px-[8vw]">
-        <div className="max-w-[1400px] mx-auto">
+      <section className="bg-primary text-primary-foreground pt-36 pb-20 md:pt-44 md:pb-28 px-6 md:px-[8vw] relative overflow-hidden">
+        {/* Subtle background animation */}
+        <div className="absolute inset-0 opacity-10">
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            className="absolute w-96 h-96 bg-accent rounded-full blur-3xl"
+            style={{ top: '-10%', right: '-10%' }}
+            animate={{ scale: [1, 1.1, 1], opacity: [0.1, 0.15, 0.1] }}
+            transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+          />
+        </div>
+
+        <div className="max-w-[1400px] mx-auto relative z-10">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7 }}>
-            <h1 className="font-heading text-5xl md:text-7xl font-light leading-tight">
+            transition={{
+              duration: 0.8,
+              ease: [0.25, 0.46, 0.45, 0.94]
+            }}>
+            {/* Subheading */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              className="mb-6">
+              <p className="text-sm md:text-base tracking-[0.15em] uppercase font-body opacity-60 font-medium">
+                {t.choosePlan.eyebrow}
+              </p>
+            </motion.div>
+
+            {/* Main Heading */}
+            <motion.h1
+              className="font-heading text-5xl md:text-7xl font-light leading-tight tracking-tight mb-6"
+              initial={{ opacity: 0, y: 30, scaleY: 0.8 }}
+              animate={{ opacity: 1, y: 0, scaleY: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.15,
+                ease: [0.25, 0.46, 0.45, 0.94]
+              }}
+              style={{ originY: 'center' }}>
               {t.choosePlan.heading}
-            </h1>
-            <p className="mt-4 text-sm md:text-base opacity-70 max-w-lg leading-relaxed">
+            </motion.h1>
+
+            {/* Description */}
+            <motion.p
+              className="text-base md:text-lg opacity-60 max-w-lg leading-relaxed font-light"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.3 }}>
               {t.choosePlan.subtitle}
-            </p>
+            </motion.p>
+
+            {/* Accent Line */}
+            <motion.div
+              className="w-16 h-1 bg-accent mt-8 rounded-full"
+              initial={{ width: 0, opacity: 0 }}
+              animate={{ width: 64, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.4, ease: 'easeOut' }}
+            />
           </motion.div>
         </div>
       </section>
@@ -77,7 +127,7 @@ export default function ChoosePlan() {
                 {plan.recommended && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
                     <div className="bg-accent text-accent-foreground px-4 py-1 rounded-full text-xs tracking-[0.1em] uppercase font-medium">
-                      Recomandat
+                      {t.choosePlan.recommended}
                     </div>
                   </div>
                 )}
@@ -102,7 +152,7 @@ export default function ChoosePlan() {
                         {plan.oldPrice} {plan.currency}
                       </span>
                       <span className="text-xs tracking-[0.1em] uppercase font-medium text-red-500">
-                        Economisești 1000 lei
+                        {t.choosePlan.savingText}
                       </span>
                     </div>
                   )}

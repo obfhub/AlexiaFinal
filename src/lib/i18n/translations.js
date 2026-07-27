@@ -219,9 +219,29 @@ export const translations = {
       ],
     },
     choosePlan: {
+      eyebrow: "Planuri de Membru",
       heading: "Alege-ți abonamentul",
       subtitle: "Selectează planul care se potrivește cel mai bine nevoilor tale și completează formularul.",
       selectButton: "Selectează acest plan",
+      plans: [
+        {
+          title: "Ședință individuală",
+          description: "O sesiune pentru a testa",
+          features: ["Acces la o ședință", "Consultant gratuit", "Recomandări personalizate"],
+        },
+        {
+          title: "Abonament 3 luni",
+          description: "O ședință doar 250 lei",
+          features: ["Acces nelimitat 3 luni", "Consultant personal dedicat", "Prioritate la rezervări", "Reducere 25%"],
+        },
+        {
+          title: "Abonament lunar",
+          description: "Pentru începatoare",
+          features: ["Acces nelimitat o lună", "Consultant personal", "Acces la comunitate"],
+        },
+      ],
+      savingText: "Economisești 1000 lei",
+      recommended: "Recomandat",
     },
     contactForm: {
       heading: "Rezervă o clasă",
@@ -231,6 +251,19 @@ export const translations = {
       successMessage: "Vom reveni cu o ofertă specială pentru tine.",
       error: "Eroare",
       errorMessage: "Ceva a mers prost. Încercați din nou.",
+    },
+    location: {
+      eyebrow: "Locație",
+      heading: "Unde ne găsești",
+      addressTitle: "Adresă",
+      phoneTitle: "Telefon",
+      hoursTitle: "Program",
+      directionsButton: "Obține direcții",
+      mondayFriday: "Luni – Vineri",
+      saturday: "Sâmbătă",
+      sunday: "Duminică",
+      mondayFridayHours: "07:00 – 22:00",
+      weekendHours: "08:30 – 18:00",
     },
   },
 
@@ -454,9 +487,29 @@ export const translations = {
       ],
     },
     choosePlan: {
+      eyebrow: "Выбор плана",
       heading: "Выбери абонемент",
       subtitle: "Выбери план, который лучше всего подходит твоим потребностям, и заполни форму.",
       selectButton: "Выбрать этот план",
+      plans: [
+        {
+          title: "Одно занятие",
+          description: "Одно занятие для пробы",
+          features: ["Доступ к одному занятию", "Консультант бесплатно", "Персональные рекомендации"],
+        },
+        {
+          title: "Абонемент на 3 месяца",
+          description: "Одно занятие всего за 250 лей",
+          features: ["Безлимитный доступ на 3 месяца", "Персональный консультант", "Приоритет при бронировании", "Скидка 25%"],
+        },
+        {
+          title: "Месячный абонемент",
+          description: "Для начинающих",
+          features: ["Безлимитный доступ на месяц", "Персональный консультант", "Доступ к сообществу"],
+        },
+      ],
+      savingText: "Экономишь 1000 лей",
+      recommended: "Рекомендуем",
     },
     contactForm: {
       heading: "Забронировать занятие",
@@ -466,6 +519,19 @@ export const translations = {
       successMessage: "Мы вернёмся к тебе со специальным предложением.",
       error: "Ошибка",
       errorMessage: "Что-то пошло не так. Попробуй ещё раз.",
+    },
+    location: {
+      eyebrow: "Местоположение",
+      heading: "Где нас найти",
+      addressTitle: "Адрес",
+      phoneTitle: "Телефон",
+      hoursTitle: "График работы",
+      directionsButton: "Получить маршрут",
+      mondayFriday: "Пн–Пт",
+      saturday: "Сб",
+      sunday: "Вс",
+      mondayFridayHours: "07:00 – 22:00",
+      weekendHours: "08:30 – 18:00",
     },
   },
 };

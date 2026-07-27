@@ -40,18 +40,18 @@ export default function Footer() {
             <p className="text-xs tracking-[0.3em] uppercase mb-6 font-medium">{t.contact.navigate}</p>
             <div className="flex flex-col gap-3">
               {[
-              { label: t.nav.classes, path: "/classes" },
-              { label: t.nav.pricing, path: "/pricing" },
-              { label: t.nav.instructors, path: "/instructors" }].
-              map((link) =>
-              <Link
-                key={link.path}
-                to={link.path}
-                className="text-sm transition-opacity hover:text-accent">
-
+                { label: t.nav.classes, path: "/classes#schedule" },
+                { label: t.choosePlan.heading, path: "/choose-plan" },
+                { label: t.nav.instructors, path: "/instructors" },
+                { label: t.nav.bookClass, path: "/classes" }
+              ].map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className="text-sm transition-opacity hover:text-accent">
                   {link.label}
                 </Link>
-              )}
+              ))}
             </div>
           </div>
 

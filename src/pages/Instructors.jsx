@@ -1,24 +1,34 @@
-import { useState, useEffect } from "react";
-
+import { useState } from "react";
 import { motion } from "framer-motion";
 import InstructorCard from "../components/instructors/InstructorCard";
 import TypewriterText from "../components/TypewriterText";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
+// Sample instructor data
+/** @type {Array<{id: number, name: string, specialty: string, philosophy: string, image: string, certifications: string[]}>} */
+const SAMPLE_INSTRUCTORS = [
+  {
+    id: 1,
+    name: "Alexei",
+    specialty: "Karaoke Ride",
+    philosophy: "Muzica te face sa uiti ca pedalezi.",
+    image: "https://images.unsplash.com/photo-1633613286991-611bcba6469e?w=500&h=600&fit=crop",
+    certifications: ["Indoor Cycling", "Group Fitness"],
+  },
+  {
+    id: 2,
+    name: "Olesia",
+    specialty: "Power Ride",
+    philosophy: "Limitele sunt doar un inceput.",
+    image: "https://images.unsplash.com/photo-1621615252918-48416bd8575a?w=500&h=600&fit=crop",
+    certifications: ["HIIT Training", "Strength & Conditioning"],
+  },
+];
+
 export default function Instructors() {
   const { t } = useLanguage();
-  const [instructors, setInstructors] = useState([]);
-  const [loading, setLoading] = useState(false);
-
-  // Data fetching disabled
-  // useEffect(() => {
-  //   const load = async () => {
-  //     const data = await db.entities.Instructor.list("sort_order");
-  //     setInstructors(data);
-  //     setLoading(false);
-  //   };
-  //   load();
-  // }, []);
+  const [instructors] = useState(SAMPLE_INSTRUCTORS);
+  const [loading] = useState(false);
 
   return (
     <div>
