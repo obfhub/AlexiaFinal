@@ -1,53 +1,45 @@
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
 import { motion } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useEffect, useRef } from "react";
 import TypewriterText from "../TypewriterText";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export default function HeroSection({ heroImage }) {
   const { t } = useLanguage();
-  const [scrollY, setScrollY] = useState(0);
+  const sectionRef = useRef(null);
+  const imgRef = useRef(null);
   const heroBoundary = 150;
 
   useEffect(() => {
-    let rafId = 0;
-    let lastScrollY = 0;
-
     const handleScroll = () => {
-      if (rafId) cancelAnimationFrame(rafId);
+      if (!sectionRef.current || !imgRef.current) return;
 
-      rafId = requestAnimationFrame(() => {
-        if (window.scrollY !== lastScrollY) {
-          lastScrollY = window.scrollY;
-          setScrollY(window.scrollY);
-        }
-      });
+      const scrollY = window.scrollY;
+      const roundness = Math.min(28, scrollY / heroBoundary * 28);
+      const offsetY = scrollY * 0.5;
+
+      sectionRef.current.style.borderBottomLeftRadius = `${roundness}px`;
+      sectionRef.current.style.borderBottomRightRadius = `${roundness}px`;
+      imgRef.current.style.borderBottomLeftRadius = `${roundness}px`;
+      imgRef.current.style.borderBottomRightRadius = `${roundness}px`;
+      imgRef.current.style.transform = `translateY(${offsetY * 0.3}px)`;
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-      if (rafId) cancelAnimationFrame(rafId);
-    };
-  }, []);
-
-  const roundness = Math.min(28, scrollY / heroBoundary * 28);
-  const offsetY = scrollY * 0.5;
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [heroBoundary]);
 
   return (
-    <section className="relative min-h-screen flex items-end" style={{ borderBottomLeftRadius: `${roundness}px`, borderBottomRightRadius: `${roundness}px`, transition: "border-radius 0.1s ease-out" }}>
+    <section ref={sectionRef} className="relative min-h-screen flex items-end" style={{ transition: "border-radius 0.1s ease-out" }}>
       {/* Background Image with Parallax */}
       <div className="absolute inset-0">
         <img
+          ref={imgRef}
           src={heroImage}
           alt="Indoor Cycling + Karaoke class in session"
           className="w-full h-full object-cover object-[55%_center] md:object-center lg:object-[90%_center] brightness-[0.35]"
-          style={{
-            borderBottomLeftRadius: `${roundness}px`,
-            borderBottomRightRadius: `${roundness}px`,
-            transform: `translateY(${offsetY * 0.3}px)`,
-          }} />
+          style={{ willChange: "transform" }} />
 
         {/* Sophisticated gradient overlay with depth */}
         <div className="absolute inset-0" style={{
