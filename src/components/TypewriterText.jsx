@@ -18,8 +18,8 @@ export default function TypewriterText({ children, className = "", delay = 0 }) 
           },
         },
       }}
-      className={`${className} leading-none block`}
-      style={{ minHeight: 0 }}
+      className={`${className} leading-none block w-auto`}
+      style={{ minHeight: 0, width: 'auto', overflow: 'visible' }}
     >
       {text.split("").map((char, i) => (
         <motion.span

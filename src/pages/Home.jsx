@@ -8,6 +8,7 @@ import FacilitySection from "../components/home/FacilitySection";
 
 import DecorativeSection from "../components/home/DecorativeSection";
 import FaqSection from "../components/home/FaqSection";
+import WhereToFindUs from "../components/location/WhereToFindUs";
 
 const IMAGES = {
   hero: "/heroalexia.png",
@@ -40,6 +41,7 @@ export default function Home() {
       <TestimonialsSection />
       <FaqSection />
       <FacilitySection images={IMAGES.facility} />
+      <WhereToFindUs />
 
     </div>
   );

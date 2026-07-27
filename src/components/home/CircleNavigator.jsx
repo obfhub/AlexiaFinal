@@ -44,16 +44,15 @@ export default function CircleNavigator() {
 
   return (
     <div className="flex flex-col items-start gap-8 mt-16 ml-6">
-      {/* Circle with dots */}
+      {/* Bicycle wheel */}
       <div className="relative w-48 h-48 flex items-center justify-start">
-        {/* Circle */}
-        <svg
-          className="absolute w-full h-full"
-          viewBox="0 0 120 120"
-          style={{ transform: `rotate(${rotation}deg)`, transition: "transform 0.3s ease-out" }}
-        >
-          <circle cx="60" cy="60" r="55" fill="none" stroke="currentColor" strokeWidth="1" vectorEffect="non-scaling-stroke" />
-        </svg>
+        {/* Bicycle wheel image */}
+        <img
+          src="/noun-bicycle-wheel-3644758.svg"
+          alt="Bicycle wheel"
+          className="absolute w-full h-full text-current"
+          style={{ transform: `rotate(${rotation}deg) translateY(22px) scale(1.15)`, transition: "transform 0.3s ease-out" }}
+        />
 
         {/* Rotating container for dots and labels */}
         <div
@@ -69,12 +68,12 @@ export default function CircleNavigator() {
                   transform: `rotate(${index * 90}deg) translateY(-88px)`,
                 }}
               >
-                {/* Dot on circle line */}
+                {/* Dot on rim */}
                 <div
-                  className="absolute left-1/2 top-1/2 w-1.5 h-1.5 rounded-full bg-current -translate-x-1/2 -translate-y-1/2"
+                  className="absolute left-1/2 top-1/2 w-2 h-2 rounded-full bg-current -translate-x-1/2 -translate-y-1/2 shadow-md"
                 />
 
-                {/* Label outside circle */}
+                {/* Label outside wheel */}
                 <button
                   onClick={() => handleClick(cls.name)}
                   className={`absolute left-1/2 text-[11px] whitespace-nowrap font-body transition-colors pointer-events-auto text-primary ${index === activeIndex ? "font-medium" : "font-light"}`}

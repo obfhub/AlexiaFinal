@@ -22,7 +22,7 @@ export default function HeroSection({ heroImage }) {
   const offsetY = scrollY * 0.5;
 
   return (
-    <section className="relative min-h-screen flex items-end overflow-hidden" style={{ borderBottomLeftRadius: `${roundness}px`, borderBottomRightRadius: `${roundness}px`, transition: "border-radius 0.1s ease-out" }}>
+    <section className="relative min-h-screen flex items-end" style={{ borderBottomLeftRadius: `${roundness}px`, borderBottomRightRadius: `${roundness}px`, transition: "border-radius 0.1s ease-out" }}>
       {/* Background Image with Parallax */}
       <div className="absolute inset-0">
         <img
@@ -64,7 +64,7 @@ export default function HeroSection({ heroImage }) {
         className="absolute top-28 left-6 md:left-[8vw] md:block">
 
         {/* Mobile: Stacked vertically */}
-        <div className="md:hidden flex flex-col gap-3">
+        <div className="md:hidden flex flex-col gap-3 pr-6">
           <motion.div
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
@@ -89,7 +89,7 @@ export default function HeroSection({ heroImage }) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-            className="font-heading text-6xl md:text-[9vw] lg:text-[8.5vw] font-extralight text-accent leading-none tracking-tighter" style={{ letterSpacing: "-0.025em" }}>
+            className="font-heading text-6xl md:text-[9vw] lg:text-[8.5vw] font-extralight text-accent leading-tight tracking-tighter" style={{ letterSpacing: "-0.025em", textWrap: "balance" }}>
             <TypewriterText delay={0.5}>{t.hero.line1}</TypewriterText>
           </motion.h1>
         </div>

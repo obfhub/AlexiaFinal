@@ -2,6 +2,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import InstructorCard from "../components/instructors/InstructorCard";
 import TypewriterText from "../components/TypewriterText";
+import WhereToFindUs from "../components/location/WhereToFindUs";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 // Sample instructor data
@@ -17,7 +18,7 @@ const SAMPLE_INSTRUCTORS = [
   },
   {
     id: 2,
-    name: "Olesia",
+    name: "Olga",
     specialty: "Power Ride",
     philosophy: "Limitele sunt doar un inceput.",
     image: "https://images.unsplash.com/photo-1621615252918-48416bd8575a?w=500&h=600&fit=crop",
@@ -87,6 +88,9 @@ export default function Instructors() {
           )}
         </div>
       </section>
+
+      {/* Where to Find Us */}
+      <WhereToFindUs />
     </div>
   );
 }

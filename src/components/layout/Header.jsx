@@ -15,9 +15,11 @@ export default function Header() {
   const location = useLocation();
 
   const NAV_LINKS = [
-    { label: t.nav.classes, path: "/classes#schedule" },
-    { label: t.nav.pricing, path: "/pricing" },
+    { label: t.nav.home, path: "/" },
+    { label: t.nav.pricing, path: "/choose-plan" },
     { label: t.nav.instructors, path: "/instructors" },
+    { label: t.nav.testimonials, path: "/#testimonials" },
+    { label: t.nav.faq, path: "/#faq" },
   ];
 
   useEffect(() => {
@@ -44,6 +46,19 @@ export default function Header() {
   }, []);
 
   useEffect(() => setMobileOpen(false), [location]);
+
+  // Handle hash scrolling
+  useEffect(() => {
+    if (location.hash) {
+      const id = location.hash.replace("#", "");
+      const element = document.getElementById(id);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({ behavior: "smooth" });
+        }, 0);
+      }
+    }
+  }, [location]);
 
   const isVisible = !scrolled || mobileOpen || (scrolled && mouseAtTop);
 
@@ -108,14 +123,14 @@ export default function Header() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ height: 0 }}
-            animate={{ height: "60vh" }}
-            exit={{ height: 0 }}
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
             transition={{ type: "spring", stiffness: 45, damping: 22, mass: 1.4 }}
-            style={{ top: 0, background: "hsl(60, 11%, 98%)", borderBottomLeftRadius: "28px", borderBottomRightRadius: "28px", cursor: "url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%2232%22 height=%2232%22 viewBox=%220 0 40 40%22><circle cx=%2220%22 cy=%2220%22 r=%2214%22 fill=%22%23FC7537%22 style=%22filter: blur(3px); opacity: 1;%22/></svg>') 16 16, auto" }}
+            style={{ top: 0, background: "hsl(60, 11%, 98%)", borderBottomLeftRadius: "28px", borderBottomRightRadius: "28px" }}
             className="fixed left-0 right-0 z-40 pointer-events-auto overflow-hidden"
           >
-            <div className="px-6 md:px-[8vw] pt-20 pb-10 flex flex-col justify-between h-full">
+            <div className="px-6 md:px-[8vw] pt-20 pb-10 flex flex-col gap-5">
               {/* Nav links */}
               <div className="flex flex-col gap-5">
                 {NAV_LINKS.map((link, i) => {
@@ -149,7 +164,7 @@ export default function Header() {
                   transition={{ duration: 1.1, ease: [0.16, 1, 0.3, 1], delay: 0.65 }}
                 >
                   <Link
-                    to="/classes"
+                    to="/choose-plan"
                     className="inline-block bg-primary text-primary-foreground px-6 py-2.5 text-xs tracking-[0.1em] uppercase font-medium rounded transition-all duration-300 hover:tracking-[0.18em]"
                     onClick={() => setMobileOpen(false)}
                   >
@@ -157,17 +172,6 @@ export default function Header() {
                   </Link>
                 </motion.div>
               </div>
-
-              {/* Bottom info */}
-              <motion.div
-                initial={{ opacity: 0, filter: "blur(8px)" }}
-                animate={{ opacity: 1, filter: "blur(0px)" }}
-                exit={{ opacity: 0 }}
-                transition={{ delay: 0.8, duration: 0.9, ease: [0.16, 1, 0.3, 1] }}
-                className="text-xs text-primary/50 font-body flex flex-col gap-1"
-              >
-                <span>{t.contact.hours}</span>
-              </motion.div>
             </div>
           </motion.div>
         )}

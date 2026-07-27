@@ -147,7 +147,7 @@ export default function WhereToFindUs() {
                 width="100%"
                 height="450"
                 style={{ border: 'none', borderRadius: '0.75rem', display: 'block' }}
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2735.8567890123456!2d28.3638!3d47.4129!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40c97b8e0000001%3A0x1234567890abcdef!2sbd.%20Iuri%20Gagarin%2014%2C%20Chi%C8%99in%C4%83u%2C%20Moldova!5e0!3m2!1sen!2s!4v1234567890"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2736.234567890!2d28.363!3d47.413!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1sFitness%20%26%20Wellness%20Club%20Alexia!2s14%20Bd.%20Iuri%20Gagarin%2C%20Chișinău%202001%20Moldova!5e0!3m2!1sen!2sus!4v1700000000000"
                 allowFullScreen
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
@@ -175,8 +175,8 @@ export default function WhereToFindUs() {
                 <motion.div variants={textVariants} className="flex-1">
                   <h3 className="font-heading text-lg font-light mb-2">{t.location.addressTitle}</h3>
                   <p className="text-sm text-muted-foreground leading-relaxed">
-                    bd. Iuri Gagarin 14<br />
-                    Chișinău, Republica Moldova
+                    Fitness & Wellness Club Alexia<br />
+                    Bd. Iuri Gagarin 14, Chișinău, Moldova
                   </p>
                 </motion.div>
               </div>
@@ -248,7 +248,7 @@ export default function WhereToFindUs() {
 
             {/* Get Directions Button */}
             <motion.a
-              href="https://www.google.com/maps/search/bd.+Iuri+Gagarin+14,+Chi%C8%99in%C4%83u,+Moldova/@47.4129,28.3638,15z"
+              href="https://maps.app.goo.gl/Cq2bAqcKwgef8pm18"
               target="_blank"
               rel="noopener noreferrer"
               variants={buttonVariants}

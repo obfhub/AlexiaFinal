@@ -9,7 +9,7 @@ export default function FaqSection() {
   const [openIndex, setOpenIndex] = useState(0);
 
   return (
-    <section className="py-24 md:py-32 px-6 md:px-[8vw] bg-background">
+    <section id="faq" className="py-24 md:py-32 px-6 md:px-[8vw] bg-background">
       <div className="max-w-[1100px] mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}

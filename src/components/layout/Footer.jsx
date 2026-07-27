@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, Instagram, Facebook, ExternalLink } from "lucide-react";
+import { MapPin, Phone, Mail, Instagram, Facebook, ExternalLink, MessageCircle, Send } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const LOGO_URL = "https://media.base44.com/images/public/6a6694c080572115c141e8b7/a38dd74cd_logo.png";
@@ -8,12 +8,7 @@ export default function Footer() {
   const { t } = useLanguage();
 
   return (
-    <footer className="relative text-[#FBFBFA]" style={{ backgroundImage: "linear-gradient(rgba(22,19,18,0.75), rgba(22,19,18,0.85)), url('https://media.base44.com/images/public/6a6694c080572115c141e8b7/bd34b99df_generated_image.png')", backgroundSize: "cover", backgroundPosition: "center" }}>
-
-        {/* Logo image — full width with same padding as content */}
-        <div className="w-full px-6 md:px-[8vw] py-8 md:pt-16 md:pb-8 flex justify-center">
-          <img src={LOGO_URL} alt="Alexia Fitness Club" className="w-40 md:w-56 h-auto object-contain" />
-        </div>
+    <footer className="relative text-[#FBFBFA]" style={{ backgroundImage: "linear-gradient(rgba(22,19,18,0.75), rgba(22,19,18,0.85)), url('https://media.base44.com/images/public/6a6694c080572115c141e8b7/bd34b99df_generated_image.png')", backgroundSize: "cover", backgroundPosition: "center 35%" }}>
 
       <div className="px-6 md:px-[8vw] py-8 md:py-16">
 
@@ -21,8 +16,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8 mb-12">
           {/* Brand info */}
           <div className="flex flex-col gap-5">
-            <div>
-              <h3 className="font-heading text-lg font-light mb-2">ALEXIA Fitness & Wellness</h3>
+            <div className="flex flex-col gap-3">
+              <img src={LOGO_URL} alt="Alexia Fitness Club" className="w-32 md:w-40 h-auto object-contain" />
               <p className="font-body text-sm leading-relaxed text-white/80">
                 {t.footerBrand.description}
               </p>
@@ -40,10 +35,12 @@ export default function Footer() {
             <p className="text-xs tracking-[0.3em] uppercase mb-6 font-medium">{t.contact.navigate}</p>
             <div className="flex flex-col gap-3">
               {[
+                { label: t.nav.home, path: "/" },
                 { label: t.nav.classes, path: "/classes#schedule" },
-                { label: t.choosePlan.heading, path: "/choose-plan" },
+                { label: t.nav.pricing, path: "/choose-plan" },
                 { label: t.nav.instructors, path: "/instructors" },
-                { label: t.nav.bookClass, path: "/classes" }
+                { label: t.nav.testimonials, path: "/#testimonials" },
+                { label: t.nav.faq, path: "/#faq" }
               ].map((link) => (
                 <Link
                   key={link.path}
@@ -59,13 +56,21 @@ export default function Footer() {
           <div>
             <p className="text-xs tracking-[0.3em] uppercase mb-6 font-medium">{t.footerBrand.social}</p>
             <div className="flex flex-col gap-3 text-sm">
-              <a href="#" className="flex items-center gap-2 hover:text-accent transition-colors">
+              <a href="https://www.instagram.com/alexiafitnesswellnessclub?igsh=YjJ6azlsY3NoNGI1" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-accent transition-colors">
                 <Instagram className="w-4 h-4 flex-shrink-0" />
                 <span>{t.footerBrand.instagram}</span>
               </a>
-              <a href="#" className="flex items-center gap-2 hover:text-accent transition-colors">
+              <a href="https://www.facebook.com/alexiafitness/?locale=ro_RO" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-accent transition-colors">
                 <Facebook className="w-4 h-4 flex-shrink-0" />
                 <span>{t.footerBrand.facebook}</span>
+              </a>
+              <a href="https://t.me/alexiafitness" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-accent transition-colors">
+                <Send className="w-4 h-4 flex-shrink-0" />
+                <span>Telegram</span>
+              </a>
+              <a href="https://api.whatsapp.com/send/?phone=37379414017&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-accent transition-colors">
+                <MessageCircle className="w-4 h-4 flex-shrink-0" />
+                <span>WhatsApp</span>
               </a>
             </div>
             <div className="border-t border-white/20 my-6 pt-6">

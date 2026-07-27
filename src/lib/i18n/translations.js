@@ -2,13 +2,16 @@ export const translations = {
   ro: {
     langCode: "ro",
     nav: {
+      home: "Acasă",
       classes: "Programe",
       pricing: "Abonamente",
       instructors: "Instructori",
+      testimonials: "Testimoniale",
+      faq: "FAQ",
       bookClass: "Rezervă o clasă",
     },
     hero: {
-      line1: "Indoor Cycling",
+      line1: "Cycling",
       line2: "+ Karaoke",
       subtitle:
         "Singurul studio unde pedalezi pe ritmul muzicii și cânți din plămâni. Energie, voie bună și o comunitate care te așteaptă la fiecare clasă.",
@@ -20,15 +23,15 @@ export const translations = {
       button: "Rezervă prima clasă",
     },
     classes: {
-      eyebrow: "Programele noastre",
-      heading: "Găsește ride-ul perfect pentru tine",
+      eyebrow: "De ce Alexia",
+      heading: "Ceea ce ne face unici",
       allClasses: "Toate clasele",
       book: "Rezervă",
       items: [
-        { name: "Karaoke Ride", tag: "Muzică & Voie bună", description: "Cântă în timp ce pedalezi. Cel mai antrenant ride." },
-        { name: "Rhythm Ride", tag: "Energie & Flow", description: "Coregrafiat pe ritm. Te pierzi în muzică." },
-        { name: "Power Ride", tag: "Intensitate maximă", description: "Intervale intense. Pătrunde-ți limitele." },
-        { name: "Chill Ride", tag: "Relaxare & Vibe", description: "Recuperare activă pe muzică calmă." },
+        { name: "De ce Alexia", tag: "Ceea ce ne diferențiază", description: "Singurul studio unde muzica, energia și comunitatea se reunesc într-o experiență unică de cycling indoor cu karaoke." },
+        { name: "Ce să aștepți", tag: "Experiența clasei", description: "45 de minute de ritm intens, motivație la fiecare pedalare și o atmosferă care te face să vrei să revii." },
+        { name: "Abordarea noastră", tag: "Filosofia antrenorilor", description: "Instructori certificați care nu doar antrenează corpul, ci inspiră și motivează fiecare persoană din sala." },
+        { name: "Comunitate", tag: "Suport și conexiune", description: "Oameni cu aceeași gândire, prieteni noi și o familie de fitness care te susține în fiecare pas." },
       ],
     },
     benefits: {
@@ -49,7 +52,7 @@ export const translations = {
       viewAll: "Vezi toți",
       items: [
         { name: "Alexei", specialty: "Karaoke Ride", philosophy: "Muzica te face să uiti că pedalezi." },
-        { name: "Olesia", specialty: "Power Ride", philosophy: "Limitele sunt doar un început." },
+        { name: "Olga", specialty: "Power Ride", philosophy: "Limitele sunt doar un început." },
       ],
     },
     testimonials: {
@@ -270,14 +273,17 @@ export const translations = {
   ru: {
     langCode: "ru",
     nav: {
+      home: "Главная",
       classes: "Программы",
       pricing: "Абонементы",
       instructors: "Тренеры",
+      testimonials: "Отзывы",
+      faq: "FAQ",
       bookClass: "Забронировать",
     },
     hero: {
-      line1: "Indoor Cycling",
-      line2: "+ Karaoke",
+      line1: "Сайклинг",
+      line2: "+ Караоке",
       subtitle:
         "Единственная студия, где ты крутиешь педали в ритме музыки и поёшь в полный голос. Энергия, драйв и сообщество, которое ждёт тебя на каждом занятии.",
       cta: "Забронировать место",
@@ -288,15 +294,15 @@ export const translations = {
       button: "Забронировать первое занятие",
     },
     classes: {
-      eyebrow: "Наши программы",
-      heading: "Найди свой идеальный ride",
+      eyebrow: "Почему Alexia",
+      heading: "Что нас выделяет",
       allClasses: "Все занятия",
       book: "Бронь",
       items: [
-        { name: "Karaoke Ride", tag: "Музыка & Драйв", description: "Пой, пока крутишь педали. Самый зажигательный ride." },
-        { name: "Rhythm Ride", tag: "Энергия & Flow", description: "Хореография в ритме. Теряешься в музыке." },
-        { name: "Power Ride", tag: "Макс. интенсивность", description: "Интенсивные интервалы. Пробивай пределы." },
-        { name: "Chill Ride", tag: "Релакс & Vibe", description: "Активное восстановление под спокойную музыку." },
+        { name: "Почему Alexia", tag: "Что нас отличает", description: "Единственная студия, где музыка, энергия и сообщество объединяются в уникальный опыт велоспорта в помещении с караоке." },
+        { name: "Чего ожидать", tag: "Опыт класса", description: "45 минут интенсивного ритма, мотивация на каждом педале и атмосфера, которая заставляет вернуться." },
+        { name: "Наш подход", tag: "Философия тренеров", description: "Сертифицированные инструкторы, которые не только тренируют тело, но и вдохновляют каждого в зале." },
+        { name: "Сообщество", tag: "Поддержка и связь", description: "Люди с одинаковым мышлением, новые друзья и семья фитнеса, которая поддерживает вас на каждом шагу." },
       ],
     },
     benefits: {
@@ -317,7 +323,7 @@ export const translations = {
       viewAll: "Все",
       items: [
         { name: "Alexei", specialty: "Karaoke Ride", philosophy: "Музыка заставляет забыть, что ты крутишь педали." },
-        { name: "Olesia", specialty: "Power Ride", philosophy: "Пределы — это только начало." },
+        { name: "Olga", specialty: "Power Ride", philosophy: "Пределы — это только начало." },
       ],
     },
     testimonials: {
@@ -342,7 +348,7 @@ export const translations = {
       eyebrow: "Частые вопросы",
       heading: "Всё, что хочешь знать",
       items: [
-        { q: "Что такое Indoor Cycling + Karaoke?", a: "Это занятие по indoor cycling, где музыка в центре опыта. Крутишь педали в ритме и, если хочется, поёшь вместе с группой. Никакого давления — только энергия и драйв." },
+        { q: "Что такое Сайклинг + Караоке?", a: "Это занятие по indoor cycling, где музыка в центре опыта. Крутишь педали в ритме и, если хочется, поёшь вместе с группой. Никакого давления — только энергия и драйв." },
         { q: "Нужен ли хороший голос, чтобы петь?", a: "Вовсе нет! Караоке в Alexia — это просто наслаждение музыкой. Пой, сколько можешь, или просто слушай и крути педали. Атмосфера про веселье, а не про вокал." },
         { q: "Нужно ли специальное снаряжение?", a: "Нет. Приходи в удобной спортивной одежде и кроссовках. Велосипеды с педалями под оба типа креплений. Вода и полотенца доступны в студии." },
         { q: "Это моё первое занятие. Смогу ли держать темп?", a: "Конечно. Тренер настроит велосипед и сопротивление под тебя. Ride подходят для всех уровней — ты контролируешь интенсивность." },
@@ -351,7 +357,7 @@ export const translations = {
       ],
     },
     contact: {
-      tagline: "Indoor Cycling + Karaoke. Музыка, энергия и сообщество, которое ждёт тебя на каждом занятии.",
+      tagline: "Сайклинг + Караоке. Музыка, энергия и сообщество, которое ждёт тебя на каждом занятии.",
       navigate: "Навигация",
       connect: "Контакты",
       address: "бл. Юрия Гагарина 14, Кишинёв, Республика Молдова",

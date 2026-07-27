@@ -86,7 +86,7 @@ export default function TestimonialsSection() {
   }, [isHovering, isMobile, TESTIMONIALS.length]);
 
   return (
-    <section className="relative overflow-hidden" style={{ backgroundImage: `url('${TESTIMONIALS_BG}')`, backgroundSize: "cover", backgroundPosition: isMobile ? "35% center" : "center" }}>
+    <section id="testimonials" className="relative overflow-hidden" style={{ backgroundImage: `url('${TESTIMONIALS_BG}')`, backgroundSize: "cover", backgroundPosition: isMobile ? "35% center" : "center" }}>
       <div className="absolute inset-0 bg-primary/55 pointer-events-none z-0" />
       <div className="relative z-10 w-full px-6 md:px-[8vw] py-24 md:py-32">
         <motion.div
