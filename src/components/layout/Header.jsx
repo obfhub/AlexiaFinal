@@ -73,7 +73,7 @@ export default function Header() {
       style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? "translateY(0)" : "translateY(-100%)", transition: "opacity 0.4s ease, transform 0.4s ease, background-color 0.5s ease, border-color 0.5s ease" }}
     >
       <div className="px-6 md:px-[8vw] flex items-center justify-end h-16 relative">
-        <div className="absolute left-1/2 -translate-x-1/2">
+        <div className="absolute left-1/2 -translate-x-1/2 z-50">
           <Link to="/" className="inline-flex items-center justify-center" style={{ height: "40px" }}>
             <img
               src={scrolled || mobileOpen ? SCROLLED_LOGO_URL : LOGO_URL}
