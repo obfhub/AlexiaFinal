@@ -40,7 +40,7 @@ export const translations = {
       items: [
         { num: "01", title: "Muzică la fiecare clasă", text: "Fiecare ride are playlistul lui. Muzica te poartă, ritmul te ține în mișcare." },
         { num: "02", title: "Instructori care te motivează", text: "Energie contagiioasă și îndrumare atentă la fiecare pedalare." },
-        { num: "03", title: "Grupuri mici", text: "Maximum 14 biciclete pe clasă. Atenție la fiecare, nimeni nu se pierde." },
+        { num: "03", title: "Grupuri mici", text: "Maximum 7 biciclete pe clasă. Atenție la fiecare, nimeni nu se pierde." },
         { num: "04", title: "Cardio + distracție", text: "Arzi calorii și te distrezi în același timp. Antrenamentul nu mai e o corvoadă." },
         { num: "05", title: "Program flexibil", text: "Dimineața devreme până seara târziu, 7 zile pe săptămână. Ride-ul tău se potrivește vieții tale." },
         { num: "06", title: "Comunitate reală", text: "Oameni ca tine, care vin să se simtă bine. La Alexia faci prieteni, nu doar sport." },
@@ -59,7 +59,7 @@ export const translations = {
       eyebrow: "Vocile comunității",
       heading: "Vorbele lor, energia noastră",
       items: [
-        { name: "Cristina V.", result: "12 clase în 2 luni", quote: "Am venit pentru cycling și am rămas pentru karaoke. Ies de la fiecare clasă zâmbind." },
+        { name: "Cristina V.", result: "8 clase în 2 luni", quote: "Am venit pentru cycling și am rămas pentru karaoke. Ies de la fiecare clasă zâmbind." },
         { name: "Alexandru M.", result: "–6 kg în 3 luni", quote: "Nu m-am simțit niciodată că „fac sport”. Cânt, pedalez și timpul zboară." },
         { name: "Elena C.", result: "Membre din prima săptămână", quote: "Comunitatea e reală. Aici am găsit oameni care mă așteaptă și mă motivează." },
       ],
@@ -330,7 +330,7 @@ export const translations = {
       eyebrow: "Голоса сообщества",
       heading: "Их слова, наша энергия",
       items: [
-        { name: "Кристина В.", result: "12 занятий за 2 месяца", quote: "Пришла ради cycling, осталась ради караоке. Ухожу с каждого занятия с улыбкой." },
+        { name: "Кристина В.", result: "8 занятий за 2 месяца", quote: "Пришла ради cycling, осталась ради караоке. Ухожу с каждого занятия с улыбкой." },
         { name: "Александр М.", result: "–6 кг за 3 месяца", quote: "Никогда не чувствовал, что «тренируюсь». Пою, кручу педали, и время летит." },
         { name: "Елена К.", result: "С первой недели", quote: "Сообщество настоящее. Здесь я нашла людей, которые меня ждут и мотивируют." },
       ],
