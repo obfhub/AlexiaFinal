@@ -72,51 +72,58 @@ export default function Header() {
       }`}
       style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? "translateY(0)" : "translateY(-100%)", transition: "opacity 0.4s ease, transform 0.4s ease, background-color 0.5s ease, border-color 0.5s ease" }}
     >
-      <div className="px-6 md:px-[8vw] flex items-center justify-end h-16 relative">
-        <div className="absolute left-1/2 -translate-x-1/2 z-50 top-1/2 translate-y-1">
-          <Link to="/" className="inline-flex items-center justify-center" style={{ height: "50px" }}>
+      <div className="px-6 md:px-[8vw] flex items-center justify-between h-20 md:h-24 relative">
+        {/* Logo - Center */}
+        <div className="absolute left-1/2 -translate-x-1/2 z-50 h-full flex flex-col items-center justify-center">
+          <Link to="/" className="inline-flex items-center justify-center transition-transform duration-300 hover:scale-105">
             <img
               src={scrolled || mobileOpen ? SCROLLED_LOGO_URL : LOGO_URL}
               alt="Alexia Fitness Club"
-              className="h-16 md:h-20 w-auto object-contain"
+              className="h-15 md:h-20 w-auto object-contain"
             />
           </Link>
         </div>
 
-        {/* Language switcher */}
-        <div className="flex items-center gap-1 mr-3 text-[10px] tracking-[0.15em] uppercase font-body">
-          {languages.map((l, i) => (
-            <span key={l.code} className="flex items-center">
-              <button
-                onClick={() => changeLanguage(l.code)}
-                className={`transition-opacity ${lang === l.code ? "opacity-100 font-medium" : "opacity-50 hover:opacity-90"}`}
-              >
-                {l.label}
-              </button>
-              {i < languages.length - 1 && <span className="opacity-30 mx-0.5">/</span>}
-            </span>
-          ))}
-        </div>
+        {/* Left spacer */}
+        <div className="flex-1" />
 
-        {/* Hamburger / Close Toggle - right side */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="p-2 flex items-center justify-center w-8 h-8 relative z-50"
-          aria-label="Toggle menu"
-        >
-          {mobileOpen ? (
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <line x1="3" y1="3" x2="17" y2="17" stroke="#161312" strokeWidth="1.5" strokeLinecap="round"/>
-              <line x1="17" y1="3" x2="3" y2="17" stroke="#161312" strokeWidth="1.5" strokeLinecap="round"/>
-            </svg>
-          ) : (
-            <div className="flex flex-col justify-center gap-[6px] w-6">
-              <span className="block w-6 h-[1px] bg-current" />
-              <span className="block w-6 h-[1px] bg-current" />
-              <span className="block w-4 h-[1px] bg-current" />
-            </div>
-          )}
-        </button>
+        {/* Right Side: Language Switcher + Hamburger */}
+        <div className="flex items-center justify-end gap-4 md:gap-6 flex-1">
+          {/* Language switcher */}
+          <div className="flex items-center gap-1.5 md:gap-2 text-[9px] md:text-[10px] tracking-[0.15em] uppercase font-body">
+            {languages.map((l, i) => (
+              <span key={l.code} className="flex items-center">
+                <button
+                  onClick={() => changeLanguage(l.code)}
+                  className={`transition-opacity duration-300 ${lang === l.code ? "opacity-100 font-medium" : "opacity-50 hover:opacity-90"}`}
+                >
+                  {l.label}
+                </button>
+                {i < languages.length - 1 && <span className="opacity-30 mx-0.5 md:mx-1">/</span>}
+              </span>
+            ))}
+          </div>
+
+          {/* Hamburger / Close Toggle */}
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="p-2 flex items-center justify-center w-8 h-8 relative z-50 hover:opacity-70 transition-opacity duration-300"
+            aria-label="Toggle menu"
+          >
+            {mobileOpen ? (
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                <line x1="3" y1="3" x2="17" y2="17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+                <line x1="17" y1="3" x2="3" y2="17" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round"/>
+              </svg>
+            ) : (
+              <div className="flex flex-col justify-center gap-[6px] w-6">
+                <span className="block w-6 h-[1px] bg-current" />
+                <span className="block w-6 h-[1px] bg-current" />
+                <span className="block w-4 h-[1px] bg-current" />
+              </div>
+            )}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -130,7 +137,7 @@ export default function Header() {
             style={{ top: 0, background: "hsl(60, 11%, 98%)", borderBottomLeftRadius: "28px", borderBottomRightRadius: "28px" }}
             className="fixed left-0 right-0 z-40 pointer-events-auto overflow-hidden"
           >
-            <div className="px-6 md:px-[8vw] pt-20 pb-10 flex flex-col gap-5">
+            <div className="px-6 md:px-[8vw] pt-28 md:pt-32 pb-10 flex flex-col gap-5">
               {/* Nav links */}
               <div className="flex flex-col gap-5">
                 {NAV_LINKS.map((link, i) => {
@@ -149,7 +156,7 @@ export default function Header() {
                     >
                       <Link
                         to={link.path}
-                        className="font-heading text-[28px] font-light leading-tight text-primary block"
+                        className="font-heading text-[28px] font-light leading-tight text-primary block transition-opacity hover:opacity-70"
                         onClick={() => setMobileOpen(false)}
                       >
                         {link.label.charAt(0)}{link.label.slice(1).toLowerCase()}
@@ -165,7 +172,7 @@ export default function Header() {
                 >
                   <Link
                     to="/choose-plan"
-                    className="inline-block bg-primary text-primary-foreground px-6 py-2.5 text-xs tracking-[0.1em] uppercase font-medium rounded transition-all duration-300 hover:tracking-[0.18em]"
+                    className="inline-block bg-primary text-primary-foreground px-6 py-2.5 text-xs tracking-[0.1em] uppercase font-medium rounded transition-all duration-300 hover:tracking-[0.18em] hover:opacity-80"
                     onClick={() => setMobileOpen(false)}
                   >
                     {t.nav.bookClass}

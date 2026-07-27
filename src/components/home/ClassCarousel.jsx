@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { ArrowUpRight, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import AnimatedSoundwave from "@/components/common/AnimatedSoundwave";
 
 export default function ClassCarousel({ items, images, t }) {
   const [current, setCurrent] = useState(0);
@@ -187,40 +188,14 @@ export default function ClassCarousel({ items, images, t }) {
         </motion.button>
       </div>
 
-      {/* Minimal Dot Indicators */}
+      {/* Animated Soundwave Indicator */}
       <motion.div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex gap-3 items-center"
+        className="absolute bottom-8 left-1/2 -translate-x-1/2 z-30 flex gap-3 items-center justify-center"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.8 }}
       >
-        {items.map((_, idx) => (
-          <motion.button
-            key={idx}
-            onClick={() => resetAutoPlay(() => goToSlide(idx))}
-            className="relative group"
-            whileHover={{ scale: 1.2 }}
-            whileTap={{ scale: 0.9 }}
-          >
-            {/* Outer ring on hover */}
-            <motion.div
-              className="absolute inset-0 rounded-full bg-white/0 group-hover:bg-white/20"
-              animate={{ scale: idx === current ? 1.5 : 1 }}
-              transition={{ duration: 0.3 }}
-            />
-
-            {/* Inner dot */}
-            <motion.div
-              className="w-2.5 h-2.5 md:w-3 md:h-3 rounded-full bg-white/50 group-hover:bg-white"
-              animate={{
-                backgroundColor:
-                  idx === current ? "rgb(255, 255, 255)" : "rgb(255, 255, 255, 0.5)",
-                scale: idx === current ? 1.3 : 1,
-              }}
-              transition={{ duration: 0.3 }}
-            />
-          </motion.button>
-        ))}
+        <AnimatedSoundwave className="text-white/80" />
       </motion.div>
 
       {/* Slide Counter */}
