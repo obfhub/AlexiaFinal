@@ -197,11 +197,11 @@ export default function WhereToFindUs() {
                 <motion.div variants={textVariants} className="flex-1">
                   <h3 className="font-heading text-lg font-light mb-2">{t.location.phoneTitle}</h3>
                   <motion.a
-                    href="tel:+37379414017"
+                    href="tel:+37368549333"
                     className="text-sm text-accent hover:text-accent/80 transition-colors font-medium inline-block"
                     whileHover={{ scale: 1.05, x: 2 }}
                     whileTap={{ scale: 0.95 }}>
-                    +373 79 414 017
+                    +373 68 549 333
                   </motion.a>
                 </motion.div>
               </div>
