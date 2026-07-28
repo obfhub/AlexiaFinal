@@ -4,7 +4,6 @@ import ClassVarietiesSection from "../components/home/ClassVarietiesSection";
 import BenefitsCarousel from "../components/home/BenefitsCarousel";
 import CoachSpotlights from "../components/home/CoachSpotlights";
 import TestimonialsSection from "../components/home/TestimonialsSection";
-import FacilitySection from "../components/home/FacilitySection";
 import StatisticsSection from "../components/home/StatisticsSection";
 import MasonryGallery from "../components/home/MasonryGallery";
 
@@ -44,7 +43,6 @@ export default function Home() {
       <TestimonialsSection />
       <MasonryGallery images={IMAGES.facility} />
       <FaqSection />
-      <FacilitySection images={IMAGES.facility} />
       <WhereToFindUs />
 
     </div>
