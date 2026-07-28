@@ -8,7 +8,7 @@ import { useLanguage } from "@/lib/i18n/LanguageContext";
 export default function HeroSection({ heroImage }) {
   const { t, lang } = useLanguage();
   const sectionRef = useRef(null);
-  const imgRef = useRef(null);
+  const videoRef = useRef(null);
   const heroBoundary = 150;
 
   useEffect(() => {
@@ -17,7 +17,7 @@ export default function HeroSection({ heroImage }) {
     if (isMobile) return;
 
     const handleScroll = () => {
-      if (!sectionRef.current || !imgRef.current) return;
+      if (!sectionRef.current || !videoRef.current) return;
 
       const scrollY = window.scrollY;
       const roundness = Math.min(28, scrollY / heroBoundary * 28);
@@ -25,9 +25,9 @@ export default function HeroSection({ heroImage }) {
 
       sectionRef.current.style.borderBottomLeftRadius = `${roundness}px`;
       sectionRef.current.style.borderBottomRightRadius = `${roundness}px`;
-      imgRef.current.style.borderBottomLeftRadius = `${roundness}px`;
-      imgRef.current.style.borderBottomRightRadius = `${roundness}px`;
-      imgRef.current.style.transform = `translateY(${offsetY * 0.3}px)`;
+      videoRef.current.style.borderBottomLeftRadius = `${roundness}px`;
+      videoRef.current.style.borderBottomRightRadius = `${roundness}px`;
+      videoRef.current.style.transform = `translateY(${offsetY * 0.3}px)`;
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
@@ -36,12 +36,16 @@ export default function HeroSection({ heroImage }) {
 
   return (
     <section ref={sectionRef} className="relative min-h-screen flex items-end" style={{ transition: "border-radius 0.1s ease-out" }}>
-      {/* Background Image with Parallax */}
+      {/* Background Video with Parallax */}
       <div className="absolute inset-0">
-        <img
-          ref={imgRef}
-          src={heroImage}
-          alt="Indoor Cycling + Karaoke class in session"
+        {/* Autoplay Video */}
+        <video
+          ref={videoRef}
+          src="/hero-video.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
           className="w-full h-full object-cover object-[55%_center] md:object-center lg:object-[90%_center] brightness-[0.35]"
           style={{ willChange: "transform" }} />
 
