@@ -79,7 +79,7 @@ export default function HeroSection({ heroImage }) {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}>
-            <h1 className={`text-5xl md:text-6xl font-extralight text-accent leading-none tracking-tighter ${lang === 'ru' ? 'font-sans' : 'font-heading'}`} style={{ letterSpacing: "-0.02em" }}>
+            <h1 className="font-heading text-5xl md:text-6xl font-extralight text-accent leading-none tracking-tighter" style={{ letterSpacing: "-0.02em" }}>
               <TypewriterText key={`line1-${lang}`} delay={0.5}>{t.hero.line1}</TypewriterText>
             </h1>
           </motion.div>
@@ -87,7 +87,7 @@ export default function HeroSection({ heroImage }) {
             initial={{ opacity: 0, y: 15 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.6 }}>
-            <h1 className={`text-5xl md:text-6xl font-extralight text-primary-foreground leading-none tracking-tighter ${lang === 'ru' ? 'font-sans' : 'font-heading'}`} style={{ letterSpacing: "-0.02em" }}>
+            <h1 className="font-heading text-5xl md:text-6xl font-extralight text-primary-foreground leading-none tracking-tighter" style={{ letterSpacing: "-0.02em" }}>
               <TypewriterText key={`line2-${lang}`} delay={0.9}>{t.hero.line2}</TypewriterText>
             </h1>
           </motion.div>
@@ -99,7 +99,7 @@ export default function HeroSection({ heroImage }) {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
-            className={`text-6xl md:text-[9vw] lg:text-[8.5vw] font-extralight text-accent leading-tight tracking-tighter ${lang === 'ru' ? 'font-sans' : 'font-heading'}`} style={{ letterSpacing: "-0.025em", textWrap: "balance" }}>
+            className="font-heading text-6xl md:text-[9vw] lg:text-[8.5vw] font-extralight text-accent leading-tight tracking-tighter" style={{ letterSpacing: "-0.025em", textWrap: "balance" }}>
             <TypewriterText key={`desktop-line1-${lang}`} delay={0.5}>{t.hero.line1}</TypewriterText>
           </motion.h1>
         </div>
@@ -111,7 +111,7 @@ export default function HeroSection({ heroImage }) {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
         className="absolute hidden md:block right-[8vw] bottom-48">
-        <h1 className={`text-6xl md:text-[9vw] lg:text-[8.5vw] font-extralight text-primary-foreground leading-none tracking-tighter text-right ${lang === 'ru' ? 'font-sans' : 'font-heading'}`} style={{ letterSpacing: "-0.025em" }}>
+        <h1 className="font-heading text-6xl md:text-[9vw] lg:text-[8.5vw] font-extralight text-primary-foreground leading-none tracking-tighter text-right" style={{ letterSpacing: "-0.025em" }}>
           <TypewriterText key={`desktop-line2-${lang}`} delay={0.9}>{t.hero.line2}</TypewriterText>
         </h1>
       </motion.div>
