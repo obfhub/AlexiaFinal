@@ -79,7 +79,7 @@ export default function Header() {
             <img
               src={scrolled || mobileOpen ? SCROLLED_LOGO_URL : LOGO_URL}
               alt="Alexia Fitness Club"
-              className="h-15 md:h-20 w-auto object-contain"
+              className="h-10 md:h-20 w-auto object-contain"
             />
           </Link>
         </div>
