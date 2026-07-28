@@ -37,14 +37,14 @@ export default function HeroSection({ heroImage }) {
           className="flex flex-col gap-1">
 
           {/* Line 1 */}
-          <h1 className={`text-7xl md:text-8xl lg:text-9xl font-black tracking-tight leading-none text-accent ${
+          <h1 className={`text-5xl sm:text-6xl md:text-8xl lg:text-9xl font-black tracking-tight leading-none text-accent ${
             lang === 'ru' ? 'font-sans' : 'font-heading'
           }`}>
             {t.hero.line1}
           </h1>
 
           {/* Line 2 */}
-          <h2 className={`text-6xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none text-white ${
+          <h2 className={`text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tight leading-none text-white ${
             lang === 'ru' ? 'font-sans' : 'font-heading'
           }`}>
             {t.hero.line2}
@@ -56,7 +56,7 @@ export default function HeroSection({ heroImage }) {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
-          className="max-w-2xl text-lg md:text-xl text-gray-100 leading-relaxed">
+          className="max-w-2xl text-base sm:text-lg md:text-xl text-gray-100 leading-relaxed">
           {t.hero.subtitle}
         </motion.p>
 
