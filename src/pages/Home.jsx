@@ -5,7 +5,6 @@ import BenefitsCarousel from "../components/home/BenefitsCarousel";
 import CoachSpotlights from "../components/home/CoachSpotlights";
 import TestimonialsSection from "../components/home/TestimonialsSection";
 import FacilitySection from "../components/home/FacilitySection";
-import UniqueExperienceSection from "../components/home/UniqueExperienceSection";
 import StatisticsSection from "../components/home/StatisticsSection";
 import MasonryGallery from "../components/home/MasonryGallery";
 
@@ -38,7 +37,6 @@ export default function Home() {
       <HeroSectionPremium heroImage={IMAGES.hero} />
       <SpecialOfferSection />
       <ClassVarietiesSection images={IMAGES.classes} />
-      <UniqueExperienceSection />
       <DecorativeSection />
       <StatisticsSection />
       <BenefitsCarousel />
