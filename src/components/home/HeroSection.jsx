@@ -26,18 +26,18 @@ export default function HeroSection({ heroImage }) {
         <div className="absolute inset-0 bg-gradient-to-b from-black/20 via-black/40 to-black/60" />
       </div>
 
-      {/* Content Container - Left Aligned, More Down */}
-      <div className="relative z-10 w-full h-full flex flex-col items-start justify-start px-6 md:px-12 lg:px-16 pt-96 md:pt-[36rem]">
+      {/* Content Container - Left Aligned, Consistent Spacing Rhythm */}
+      <div className="relative z-10 w-full h-full flex flex-col items-start px-6 md:px-12 lg:px-16 pt-48 sm:pt-64 md:pt-80 lg:pt-[28rem] gap-6 md:gap-8">
 
         {/* Main Headlines - Left Aligned and Bold */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="max-w-4xl mb-8">
+          className="flex flex-col gap-1">
 
           {/* Line 1 */}
-          <h1 className={`text-7xl md:text-8xl lg:text-9xl font-black tracking-tight leading-none mb-2 text-accent ${
+          <h1 className={`text-7xl md:text-8xl lg:text-9xl font-black tracking-tight leading-none text-accent ${
             lang === 'ru' ? 'font-sans' : 'font-heading'
           }`}>
             {t.hero.line1}
@@ -56,7 +56,7 @@ export default function HeroSection({ heroImage }) {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.15, ease: "easeOut" }}
-          className="max-w-xl text-lg md:text-xl text-gray-100 leading-relaxed mb-12">
+          className="max-w-2xl text-lg md:text-xl text-gray-100 leading-relaxed">
           {t.hero.subtitle}
         </motion.p>
 
