@@ -5,7 +5,6 @@ import BenefitsCarousel from "../components/home/BenefitsCarousel";
 import CoachSpotlights from "../components/home/CoachSpotlights";
 import TestimonialsSection from "../components/home/TestimonialsSection";
 import StatisticsSection from "../components/home/StatisticsSection";
-import MasonryGallery from "../components/home/MasonryGallery";
 
 import DecorativeSection from "../components/home/DecorativeSection";
 import FaqSection from "../components/home/FaqSection";
@@ -41,7 +40,6 @@ export default function Home() {
       <BenefitsCarousel />
       <CoachSpotlights />
       <TestimonialsSection />
-      <MasonryGallery images={IMAGES.facility} />
       <FaqSection />
       <WhereToFindUs />
 
