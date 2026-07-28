@@ -68,7 +68,7 @@ export default function Footer() {
                 <Send className="w-4 h-4 flex-shrink-0" />
                 <span>Telegram</span>
               </a>
-              <a href="https://api.whatsapp.com/send/?phone=37379414017&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-accent transition-colors">
+              <a href="https://api.whatsapp.com/send/?phone=37368549333&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-accent transition-colors">
                 <MessageCircle className="w-4 h-4 flex-shrink-0" />
                 <span>WhatsApp</span>
               </a>
@@ -82,7 +82,7 @@ export default function Footer() {
                 </div>
                 <div className="flex items-center gap-3">
                   <Phone className="w-4 h-4 flex-shrink-0" />
-                  <a href="tel:+37379414017" className="hover:text-accent transition-colors">{t.contact.phone}</a>
+                  <a href="tel:+37368549333" className="hover:text-accent transition-colors">{t.contact.phone}</a>
                 </div>
               </div>
             </div>
