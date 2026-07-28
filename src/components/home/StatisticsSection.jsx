@@ -17,7 +17,7 @@ export default function StatisticsSection() {
     {
       icon: Zap,
       label: t.statistics?.classes || "Classes Completed",
-      value: 1500,
+      value: 800,
       suffix: "+",
       color: "text-blue-500"
     },
