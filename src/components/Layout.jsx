@@ -1,7 +1,7 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import Header from "./layout/Header";
-import Footer from "./layout/Footer";
+import FooterPremium from "./layout/FooterPremium";
 
 export default function Layout() {
   const location = useLocation();
@@ -16,7 +16,7 @@ export default function Layout() {
       <main className="flex-1">
         <Outlet />
       </main>
-      <Footer />
+      <FooterPremium />
     </div>
   );
 }
