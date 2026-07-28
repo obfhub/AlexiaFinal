@@ -27,7 +27,7 @@ export default function HeroSection({ heroImage }) {
       </div>
 
       {/* Content Container - Left Aligned, Consistent Spacing Rhythm */}
-      <div className="relative z-10 w-full h-full flex flex-col items-start px-6 md:px-12 lg:px-16 pt-4 sm:pt-48 md:pt-80 lg:pt-[28rem] gap-6 md:gap-8">
+      <div className="relative z-10 w-full h-full flex flex-col items-start px-6 md:px-12 lg:px-16 pt-[32rem] sm:pt-48 md:pt-80 lg:pt-[28rem] gap-6 md:gap-8">
 
         {/* Main Headlines - Left Aligned and Bold */}
         <motion.div
