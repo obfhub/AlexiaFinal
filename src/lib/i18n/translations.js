@@ -64,6 +64,14 @@ export const translations = {
         { name: "Elena C.", result: "Membre din prima săptămână", quote: "Comunitatea e reală. Aici am găsit oameni care mă așteaptă și mă motivează." },
       ],
     },
+    statistics: {
+      eyebrow: "După numere",
+      heading: "Impactul comunității noastre",
+      members: "Membri Activi",
+      classes: "Clase Finalizate",
+      rating: "Rating Mediu",
+      subtitle: "Alătură-te miilor de riders care și-au transformat călătoria fitness la Alexia. Povestea ta începe aici.",
+    },
     facility: {
       eyebrow: "Studio",
       heading: "Unde trăiește energia",
@@ -339,6 +347,14 @@ export const translations = {
         { name: "Александр М.", result: "–6 кг за 3 месяца", quote: "Никогда не чувствовал, что «тренируюсь». Пою, кручу педали, и время летит." },
         { name: "Елена К.", result: "С первой недели", quote: "Сообщество настоящее. Здесь я нашла людей, которые меня ждут и мотивируют." },
       ],
+    },
+    statistics: {
+      eyebrow: "По цифрам",
+      heading: "Влияние нашего сообщества",
+      members: "Активные Члены",
+      classes: "Занятий Завершено",
+      rating: "Средняя Оценка",
+      subtitle: "Присоединяйся к тысячам райдеров, которые трансформировали свой фитнес-путь в Alexia. Твоя история начинается здесь.",
     },
     facility: {
       eyebrow: "Студия",

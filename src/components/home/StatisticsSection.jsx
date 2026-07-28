@@ -1,26 +1,29 @@
 import { motion } from "framer-motion";
 import { Users, Zap, Star } from "lucide-react";
 import CounterAnimation from "../common/CounterAnimation";
+import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 export default function StatisticsSection() {
+  const { t } = useLanguage();
+
   const stats = [
     {
       icon: Users,
-      label: "Active Members",
+      label: t.statistics?.members || "Active Members",
       value: 500,
       suffix: "+",
       color: "text-accent"
     },
     {
       icon: Zap,
-      label: "Classes Completed",
+      label: t.statistics?.classes || "Classes Completed",
       value: 2000,
       suffix: "+",
       color: "text-blue-500"
     },
     {
       icon: Star,
-      label: "Average Rating",
+      label: t.statistics?.rating || "Average Rating",
       value: 4.9,
       suffix: "/5",
       color: "text-yellow-500"
@@ -63,10 +66,10 @@ export default function StatisticsSection() {
           className="text-center mb-16"
         >
           <p className="text-xs tracking-[0.3em] uppercase font-body text-primary mb-4">
-            By The Numbers
+            {t.statistics?.eyebrow || "By The Numbers"}
           </p>
           <h2 className="font-heading text-3xl md:text-5xl font-light leading-tight max-w-2xl mx-auto">
-            The Impact of Our Community
+            {t.statistics?.heading || "The Impact of Our Community"}
           </h2>
         </motion.div>
 
@@ -142,7 +145,7 @@ export default function StatisticsSection() {
           className="text-center mt-16"
         >
           <p className="text-base md:text-lg text-muted-foreground max-w-2xl mx-auto">
-            Join thousands of riders who've transformed their fitness journey at Alexia. Your story starts here.
+            {t.statistics?.subtitle || "Join thousands of riders who've transformed their fitness journey at Alexia. Your story starts here."}
           </p>
         </motion.div>
       </div>
