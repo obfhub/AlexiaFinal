@@ -373,7 +373,7 @@ export const translations = {
       hours: "Пн–Пт 7:00–21:00 · Сб–Вс 9:00–18:00",
     },
     footerBrand: {
-      description: "Премиум клуб фитнеса с опытом более 18 лет.",
+      description: "Премиум клуб фитнеса с опытом более 19 лет.",
       social: "Социальные сети",
       instagram: "Instagram",
       facebook: "Facebook",
