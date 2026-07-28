@@ -1,10 +1,12 @@
-import HeroSection from "../components/home/HeroSection";
+import HeroSectionPremium from "../components/home/HeroSectionPremium";
 import SpecialOfferSection from "../components/home/SpecialOfferSection";
 import ClassVarietiesSection from "../components/home/ClassVarietiesSection";
 import BenefitsCarousel from "../components/home/BenefitsCarousel";
 import CoachSpotlights from "../components/home/CoachSpotlights";
 import TestimonialsSection from "../components/home/TestimonialsSection";
 import FacilitySection from "../components/home/FacilitySection";
+import UniqueExperienceSection from "../components/home/UniqueExperienceSection";
+import StatisticsSection from "../components/home/StatisticsSection";
 
 import DecorativeSection from "../components/home/DecorativeSection";
 import FaqSection from "../components/home/FaqSection";
@@ -32,10 +34,12 @@ const IMAGES = {
 export default function Home() {
   return (
     <div>
-      <HeroSection heroImage={IMAGES.hero} />
+      <HeroSectionPremium heroImage={IMAGES.hero} />
       <SpecialOfferSection />
       <ClassVarietiesSection images={IMAGES.classes} />
+      <UniqueExperienceSection />
       <DecorativeSection />
+      <StatisticsSection />
       <BenefitsCarousel />
       <CoachSpotlights />
       <TestimonialsSection />
