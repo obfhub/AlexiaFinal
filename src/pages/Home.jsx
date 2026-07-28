@@ -1,4 +1,4 @@
-import HeroSectionPremium from "../components/home/HeroSectionPremium";
+import HeroSection from "../components/home/HeroSection";
 import SpecialOfferSection from "../components/home/SpecialOfferSection";
 import ClassVarietiesSection from "../components/home/ClassVarietiesSection";
 import BenefitsCarousel from "../components/home/BenefitsCarousel";
@@ -34,7 +34,7 @@ const IMAGES = {
 export default function Home() {
   return (
     <div>
-      <HeroSectionPremium heroImage={IMAGES.hero} />
+      <HeroSection heroImage={IMAGES.hero} />
       <SpecialOfferSection />
       <ClassVarietiesSection images={IMAGES.classes} />
       <DecorativeSection />
