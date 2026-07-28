@@ -10,7 +10,7 @@ export default function StatisticsSection() {
     {
       icon: Users,
       label: t.statistics?.members || "Active Members",
-      value: 500,
+      value: 350,
       suffix: "+",
       color: "text-accent"
     },
@@ -24,7 +24,7 @@ export default function StatisticsSection() {
     {
       icon: Star,
       label: t.statistics?.rating || "Average Rating",
-      value: 4.9,
+      value: 5,
       suffix: "/5",
       color: "text-yellow-500"
     }
