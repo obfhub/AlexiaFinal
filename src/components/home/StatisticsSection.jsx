@@ -10,7 +10,7 @@ export default function StatisticsSection() {
     {
       icon: Users,
       label: t.statistics?.members || "Active Members",
-      value: 350,
+      value: 250,
       suffix: "+",
       color: "text-accent"
     },
