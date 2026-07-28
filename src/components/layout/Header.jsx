@@ -73,8 +73,8 @@ export default function Header() {
       style={{ opacity: isVisible ? 1 : 0, transform: isVisible ? "translateY(0)" : "translateY(-100%)", transition: "opacity 0.4s ease, transform 0.4s ease, background-color 0.5s ease, border-color 0.5s ease" }}
     >
       <div className="px-6 md:px-[8vw] flex items-center justify-between h-20 md:h-24 relative">
-        {/* Logo - Left */}
-        <div className="z-50 h-full flex flex-col items-center justify-center">
+        {/* Logo - Left on mobile, Center on desktop */}
+        <div className="md:absolute md:left-1/2 md:-translate-x-1/2 z-50 h-full flex flex-col items-center justify-center">
           <Link to="/" className="inline-flex items-center justify-center transition-transform duration-300 hover:scale-105">
             <img
               src={scrolled || mobileOpen ? SCROLLED_LOGO_URL : LOGO_URL}
@@ -84,8 +84,8 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Left spacer */}
-        <div className="flex-1" />
+        {/* Left spacer - hidden on mobile */}
+        <div className="hidden md:flex-1" />
 
         {/* Right Side: Language Switcher + Hamburger */}
         <div className="flex items-center justify-end gap-4 md:gap-6 flex-1">
