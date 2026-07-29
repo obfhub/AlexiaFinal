@@ -5,10 +5,10 @@ import { motion } from "framer-motion";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
 const COACH_IMAGES = [
-  "https://media.base44.com/images/public/6a6694c080572115c141e8b7/08c997bc7_generated_image.png",
-  "https://media.base44.com/images/public/6a6694c080572115c141e8b7/013b2eca2_generated_image.png",
-  "https://media.base44.com/images/public/6a6694c080572115c141e8b7/cb2d06fa9_generated_image.png",
-  "https://media.base44.com/images/public/6a6694c080572115c141e8b7/1340d16f2_generated_image.png",
+  "/images/instructor-alexei.png",
+  "/images/instructor-olga.png",
+  "/images/instructor-alexei.png",
+  "/images/instructor-olga.png",
 ];
 
 const ROW_GAP = 28;

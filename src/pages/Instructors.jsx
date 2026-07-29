@@ -21,7 +21,7 @@ const SAMPLE_INSTRUCTORS = [
     name: "Olga",
     specialty: "Power Ride",
     philosophy: "Limitele sunt doar un inceput.",
-    image: "https://images.unsplash.com/photo-1621615252918-48416bd8575a?w=500&h=600&fit=crop",
+    image: "/images/instructor-olga.png",
     certifications: ["HIIT Training", "Strength & Conditioning"],
   },
 ];
