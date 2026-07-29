@@ -51,8 +51,8 @@ export const translations = {
       heading: "Cunoaște instructorii",
       viewAll: "Vezi toți",
       items: [
-        { name: "Alexei", specialty: "Karaoke Ride", philosophy: "Muzica te face să uiti că pedalezi." },
-        { name: "Olga", specialty: "Power Ride", philosophy: "Limitele sunt doar un început." },
+        { name: "Alexei", specialty: "Indoor Cycling Instructor", philosophy: "Muzica te face să uiti că pedalezi." },
+        { name: "Olga", specialty: "Indoor Cycling Instructor", philosophy: "Limitele sunt doar un început." },
       ],
     },
     testimonials: {
@@ -201,7 +201,7 @@ export const translations = {
       philosophyText:
         "La Alexia, instructorii sunt mai mult decât coachi — sunt mentori, motivatori și tovarăși pe drumul către o viață mai activă. Fiecare aduce o perspectivă unică, formată de pasiune pentru muzică și mișcare, și o dedicare profundă față de fiecare persoană care urcă pe bicicletă. Credem că cel mai bun instructor e cel care îți vede potențialul înainte să-l vezi tu.",
       certifications: "Certificări",
-      specialties: ["Karaoke Ride", "Power Ride", "Rhythm Ride", "Chill Ride"],
+      specialties: ["Indoor Cycling Instructor", "Indoor Cycling Instructor", "Rhythm Ride", "Chill Ride"],
     },
     notFound: {
       title: "Pagina nu a fost găsită",
@@ -343,8 +343,8 @@ export const translations = {
       heading: "Наши тренеры",
       viewAll: "Все",
       items: [
-        { name: "Alexei", specialty: "Karaoke Ride", philosophy: "Музыка заставляет забыть, что ты крутишь педали." },
-        { name: "Olga", specialty: "Power Ride", philosophy: "Пределы — это только начало." },
+        { name: "Alexei", specialty: "Indoor Cycling Instructor", philosophy: "Музыка заставляет забыть, что ты крутишь педали." },
+        { name: "Olga", specialty: "Indoor Cycling Instructor", philosophy: "Пределы — это только начало." },
       ],
     },
     testimonials: {
@@ -493,7 +493,7 @@ export const translations = {
       philosophyText:
         "В Alexia тренеры — больше, чем коучи: они наставники, мотиваторы и товарищи на пути к более активной жизни. Каждый приносит уникальный взгляд, сформированный любовью к музыке и движению, и глубокую преданность каждому, кто садится на велосипед. Мы верим, что лучший тренер — тот, кто видит твой потенциал раньше тебя.",
       certifications: "Сертификации",
-      specialties: ["Karaoke Ride", "Power Ride", "Rhythm Ride", "Chill Ride"],
+      specialties: ["Indoor Cycling Instructor", "Indoor Cycling Instructor", "Rhythm Ride", "Chill Ride"],
     },
     notFound: {
       title: "Страница не найдена",

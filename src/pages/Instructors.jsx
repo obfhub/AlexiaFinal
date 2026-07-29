@@ -11,7 +11,7 @@ const SAMPLE_INSTRUCTORS = [
   {
     id: 1,
     name: "Alexei",
-    specialty: "Karaoke Ride",
+    specialty: "Indoor Cycling Instructor",
     philosophy: "Muzica te face sa uiti ca pedalezi.",
     image: "/images/instructor-alexei.png",
     certifications: ["Indoor Cycling", "Group Fitness"],
@@ -19,7 +19,7 @@ const SAMPLE_INSTRUCTORS = [
   {
     id: 2,
     name: "Olga",
-    specialty: "Power Ride",
+    specialty: "Indoor Cycling Instructor",
     philosophy: "Limitele sunt doar un inceput.",
     image: "/images/instructor-olga.png",
     certifications: ["HIIT Training", "Strength & Conditioning"],

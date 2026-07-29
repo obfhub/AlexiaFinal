@@ -1,6 +1,6 @@
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
-const TYPE_VALUES = ["All", "Karaoke Ride", "Rhythm Ride", "Power Ride", "Chill Ride"];
+const TYPE_VALUES = ["All", "Indoor Cycling Instructor", "Rhythm Ride", "Indoor Cycling Instructor", "Chill Ride"];
 const INTENSITY_VALUES = ["All", "Low", "Medium", "High"];
 const DAY_VALUES = ["All", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"];
 
