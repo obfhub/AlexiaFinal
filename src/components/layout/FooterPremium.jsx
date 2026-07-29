@@ -208,7 +208,7 @@ export default function FooterPremium() {
                 },
                 {
                   icon: Send,
-                  href: "https://t.me/alexiafitness",
+                  href: "https://t.me/+37368549333",
                   label: "Telegram",
                 },
                 {

@@ -64,7 +64,7 @@ export default function Footer() {
                 <Facebook className="w-4 h-4 flex-shrink-0" />
                 <span>{t.footerBrand.facebook}</span>
               </a>
-              <a href="https://t.me/alexiafitness" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-accent transition-colors">
+              <a href="https://t.me/+37368549333" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-accent transition-colors">
                 <Send className="w-4 h-4 flex-shrink-0" />
                 <span>Telegram</span>
               </a>

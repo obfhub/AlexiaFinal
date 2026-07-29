@@ -1,6 +1,7 @@
 import React, { createContext, useState, useContext, useEffect } from 'react';
 
 import { appParams } from '@/lib/app-params';
+import { createAxiosClient } from '@/lib/http-client';
 
 const AuthContext = createContext();
 
@@ -90,15 +91,22 @@ export const AuthProvider = ({ children }) => {
     try {
       // Now check if the user is authenticated
       setIsLoadingAuth(true);
-      const currentUser = await db.auth.me();
-      setUser(currentUser);
-      setIsAuthenticated(true);
+
+      // Check if db is available (Base44 SDK)
+      if (typeof window !== 'undefined' && window.db && window.db.auth && window.db.auth.me) {
+        const currentUser = await window.db.auth.me();
+        setUser(currentUser);
+        setIsAuthenticated(true);
+      } else {
+        console.warn('Base44 SDK not available');
+        setIsAuthenticated(false);
+      }
       setIsLoadingAuth(false);
     } catch (error) {
       console.error('User auth check failed:', error);
       setIsLoadingAuth(false);
       setIsAuthenticated(false);
-      
+
       // If user auth fails, it might be an expired token
       if (error.status === 401 || error.status === 403) {
         setAuthError({
@@ -112,19 +120,29 @@ export const AuthProvider = ({ children }) => {
   const logout = (shouldRedirect = true) => {
     setUser(null);
     setIsAuthenticated(false);
-    
-    if (shouldRedirect) {
-      // Use the SDK's logout method which handles token cleanup and redirect
-      db.auth.logout(window.location.href);
+
+    if (typeof window !== 'undefined' && window.db && window.db.auth) {
+      if (shouldRedirect) {
+        // Use the SDK's logout method which handles token cleanup and redirect
+        window.db.auth.logout(window.location.href);
+      } else {
+        // Just remove the token without redirect
+        window.db.auth.logout();
+      }
     } else {
-      // Just remove the token without redirect
-      db.auth.logout();
+      console.warn('Base44 SDK not available for logout');
     }
   };
 
   const navigateToLogin = () => {
     // Use the SDK's redirectToLogin method
-    db.auth.redirectToLogin(window.location.href);
+    if (typeof window !== 'undefined' && window.db && window.db.auth) {
+      window.db.auth.redirectToLogin(window.location.href);
+    } else {
+      console.warn('Base44 SDK not available for login redirect');
+      // Fallback: redirect to home
+      window.location.href = '/';
+    }
   };
 
   return (

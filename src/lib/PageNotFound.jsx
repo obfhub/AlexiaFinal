@@ -10,8 +10,13 @@ export default function PageNotFound({}) {
         queryKey: ['user'],
         queryFn: async () => {
             try {
-                const user = await db.auth.me();
-                return { user, isAuthenticated: true };
+                // Check if db is available (Base44 SDK)
+                if (typeof window !== 'undefined' && window.db && window.db.auth && window.db.auth.me) {
+                    const user = await window.db.auth.me();
+                    return { user, isAuthenticated: true };
+                } else {
+                    return { user: null, isAuthenticated: false };
+                }
             } catch (error) {
                 return { user: null, isAuthenticated: false };
             }

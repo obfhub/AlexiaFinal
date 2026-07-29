@@ -1,0 +1,43 @@
+{
+  "name": "Alexia Fitness & Wellness Club",
+  "short_name": "Alexia Fitness",
+  "description": "Premium fitness and wellness club with expert instructors and personalized training programs",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "theme_color": "#FFE9D9",
+  "background_color": "#FBFBFA",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [],
+  "categories": ["fitness", "health", "lifestyle"],
+  "shortcuts": [
+    {
+      "name": "Classes",
+      "short_name": "Classes",
+      "description": "View available fitness classes",
+      "url": "/classes",
+      "icons": []
+    },
+    {
+      "name": "Pricing",
+      "short_name": "Pricing",
+      "description": "View pricing plans",
+      "url": "/pricing",
+      "icons": []
+    }
+  ]
+}

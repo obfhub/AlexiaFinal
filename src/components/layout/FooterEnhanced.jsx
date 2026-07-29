@@ -325,7 +325,7 @@ export default function FooterEnhanced() {
                   label={t.footerBrand.facebook}
                 />
                 <SocialLink
-                  href="https://t.me/alexiafitness"
+                  href="https://t.me/+37368549333"
                   icon={Send}
                   label="Telegram"
                 />
