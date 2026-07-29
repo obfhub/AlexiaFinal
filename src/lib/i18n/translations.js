@@ -7,7 +7,7 @@ export const translations = {
       pricing: "Abonamente",
       instructors: "Instructori",
       testimonials: "Testimoniale",
-      faq: "FAQ",
+      faq: "Întrebări frecvente",
       bookClass: "Rezervă o clasă",
     },
     hero: {
@@ -40,7 +40,7 @@ export const translations = {
       items: [
         { num: "01", title: "Muzică la fiecare clasă", text: "Fiecare ride are playlistul lui. Muzica te poartă, ritmul te ține în mișcare." },
         { num: "02", title: "Instructori care te motivează", text: "Energie contagiioasă și îndrumare atentă la fiecare pedalare." },
-        { num: "03", title: "Grupuri mici", text: "Maximum 14 biciclete pe clasă. Atenție la fiecare, nimeni nu se pierde." },
+        { num: "03", title: "Grupuri mici", text: "Maximum 13 biciclete pe clasă. Atenție la fiecare, nimeni nu se pierde." },
         { num: "04", title: "Cardio + distracție", text: "Arzi calorii și te distrezi în același timp. Antrenamentul nu mai e o corvoadă." },
         { num: "05", title: "Program flexibil", text: "În fiecare marți, o dată pe săptămână. Ride-ul tău se potrivește vieții tale." },
         { num: "06", title: "Comunitate reală", text: "Oameni ca tine, care vin să se simtă bine. La Alexia faci prieteni, nu doar sport." },
@@ -66,6 +66,14 @@ export const translations = {
     },
     statistics: {
       eyebrow: "După numere",
+      heading: "Impactul comunității noastre",
+      members: "Membri Activi",
+      classes: "Clase Finalizate",
+      rating: "Rating Mediu",
+      subtitle: "Alătură-te miilor de riders care și-au transformat călătoria fitness la Alexia. Povestea ta începe aici.",
+    },
+    communityImpact: {
+      eyebrow: "Comunitatea noastră",
       heading: "Impactul comunității noastre",
       members: "Membri Activi",
       classes: "Clase Finalizate",
@@ -291,7 +299,7 @@ export const translations = {
       pricing: "Абонементы",
       instructors: "Тренеры",
       testimonials: "Отзывы",
-      faq: "FAQ",
+      faq: "Частые вопросы",
       bookClass: "Забронировать",
     },
     hero: {
@@ -324,7 +332,7 @@ export const translations = {
       items: [
         { num: "01", title: "Музыка на каждом занятии", text: "У каждого ride свой плейлист. Музыка ведёт, ритм держит в движении." },
         { num: "02", title: "Тренеры, которые мотивируют", text: "Заразительная энергия и внимательное руководство на каждом обороте педалей." },
-        { num: "03", title: "Маленькие группы", text: "Максимум 14 велосипедов на занятие. Внимание каждому, никто не теряется." },
+        { num: "03", title: "Маленькие группы", text: "Максимум 13 велосипедовна занятие. Внимание каждому, никто не теряется." },
         { num: "04", title: "Кардио + веселье", text: "Сжигаешь калории и веселишься одновременно. Тренировка больше не рутина." },
         { num: "05", title: "Гибкий график", text: "Каждый вторник, один раз в неделю. Твой ride — это заряд энергии на всю неделю." },
         { num: "06", title: "Настоящее сообщество", text: "Такие же люди, как ты, которые приходят за хорошим настроением. В Alexia заводишь друзей, а не просто тренируешься." },
@@ -350,6 +358,14 @@ export const translations = {
     },
     statistics: {
       eyebrow: "По цифрам",
+      heading: "Влияние нашего сообщества",
+      members: "Активные Члены",
+      classes: "Занятий Завершено",
+      rating: "Средняя Оценка",
+      subtitle: "Присоединяйся к тысячам райдеров, которые трансформировали свой фитнес-путь в Alexia. Твоя история начинается здесь.",
+    },
+    communityImpact: {
+      eyebrow: "Наше сообщество",
       heading: "Влияние нашего сообщества",
       members: "Активные Члены",
       classes: "Занятий Завершено",

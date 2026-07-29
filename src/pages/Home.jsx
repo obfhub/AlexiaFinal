@@ -4,7 +4,7 @@ import ClassVarietiesSection from "../components/home/ClassVarietiesSection";
 import BenefitsCarousel from "../components/home/BenefitsCarousel";
 import CoachSpotlights from "../components/home/CoachSpotlights";
 import TestimonialsSection from "../components/home/TestimonialsSection";
-import StatisticsSection from "../components/home/StatisticsSection";
+import CommunityImpactSection from "../components/home/CommunityImpactSection";
 
 import DecorativeSection from "../components/home/DecorativeSection";
 import FaqSection from "../components/home/FaqSection";
@@ -35,8 +35,8 @@ export default function Home() {
       <HeroSection heroImage={IMAGES.hero} />
       <SpecialOfferSection />
       <ClassVarietiesSection images={IMAGES.classes} />
+      <CommunityImpactSection />
       <DecorativeSection />
-      <StatisticsSection />
       <BenefitsCarousel />
       <CoachSpotlights />
       <TestimonialsSection />

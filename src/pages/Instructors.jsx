@@ -13,7 +13,7 @@ const SAMPLE_INSTRUCTORS = [
     name: "Alexei",
     specialty: "Karaoke Ride",
     philosophy: "Muzica te face sa uiti ca pedalezi.",
-    image: "https://images.unsplash.com/photo-1633613286991-611bcba6469e?w=500&h=600&fit=crop",
+    image: "/images/instructor-alexei.png",
     certifications: ["Indoor Cycling", "Group Fitness"],
   },
   {

@@ -86,36 +86,33 @@ export default function FooterPremium() {
       </div>
 
       <div className="relative px-6 md:px-[8vw] py-8 md:py-16">
-        {/* Top Section - Logo & Description */}
+        {/* Top Section - Logo Only */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-3 gap-12 mb-16 pb-16 border-b border-white/10"
+          className="grid grid-cols-1 md:grid-cols-1 gap-12 mb-16 pb-16 border-b border-white/10"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
         >
           {/* Brand Section */}
-          <motion.div className="flex flex-col gap-6" variants={itemVariants}>
+          <motion.div className="flex justify-center" variants={itemVariants}>
             <img
               src={LOGO_URL}
               alt="Alexia Fitness Club"
               className="w-24 md:w-32 h-auto object-contain"
+              style={{ marginLeft: "59px" }}
             />
-            <div className="space-y-3">
-              <p className="font-body text-sm leading-relaxed text-white/80">
-                {t.footerBrand?.description ||
-                  "Club de fitness premium cu experiență de peste 18 ani."}
-              </p>
-              <Link
-                to="/choose-plan"
-                className="group inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-2.5 text-xs tracking-[0.1em] uppercase font-medium rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-accent/30 w-fit"
-              >
-                {t.contact?.reserveButton || "Rezervă prima clasă"}
-                <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
-              </Link>
-            </div>
           </motion.div>
+        </motion.div>
 
+        {/* Middle Section - Navigate, Contact, Hours & Social */}
+        <motion.div
+          className="grid grid-cols-1 md:grid-cols-4 gap-12 mb-16 pb-16 border-b border-white/10"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
           {/* Quick Links */}
           <motion.div variants={itemVariants}>
             <p className="text-xs tracking-[0.3em] uppercase mb-6 font-medium">
@@ -171,42 +168,33 @@ export default function FooterPremium() {
               </div>
             </div>
           </motion.div>
-        </motion.div>
 
-        {/* Middle Section - Hours & Social */}
-        <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16 pb-16 border-b border-white/10"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
           {/* Business Hours */}
           <motion.div variants={itemVariants}>
-            <div className="flex items-center gap-3 mb-6">
+            <div className="flex items-center gap-3 mb-4">
               <Clock className="w-4 h-4 text-accent" />
               <p className="text-xs tracking-[0.3em] uppercase font-medium">
                 Business Hours
               </p>
             </div>
-            <div className="space-y-2 text-sm">
-              <div className="flex justify-between">
-                <span className="text-white/70">Monday – Friday</span>
+            <div className="space-y-1 text-sm">
+              <div>
+                <span className="text-white/70">Monday – Friday</span><br />
                 <span className="font-medium">07:00 – 22:00</span>
               </div>
-              <div className="flex justify-between">
-                <span className="text-white/70">Saturday – Sunday</span>
+              <div>
+                <span className="text-white/70">Saturday – Sunday</span><br />
                 <span className="font-medium">08:30 – 18:00</span>
               </div>
             </div>
           </motion.div>
 
           {/* Social Links */}
-          <motion.div variants={itemVariants}>
+          <motion.div variants={itemVariants} className="flex flex-col">
             <p className="text-xs tracking-[0.3em] uppercase mb-6 font-medium">
               {t.footerBrand?.social || "Urmăriți"}
             </p>
-            <div className="flex flex-wrap gap-4">
+            <div className="flex flex-wrap gap-3 mb-6">
               {[
                 {
                   icon: Instagram,
@@ -245,12 +233,25 @@ export default function FooterPremium() {
                 );
               })}
             </div>
+            <div className="space-y-3">
+              <p className="font-body text-sm leading-relaxed text-white/80">
+                {t.footerBrand?.description ||
+                  "Club de fitness premium cu experiență de peste 18 ani."}
+              </p>
+              <Link
+                to="/choose-plan"
+                className="group inline-flex items-center gap-2 bg-accent text-accent-foreground px-6 py-2.5 text-xs tracking-[0.1em] uppercase font-medium rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-accent/30 w-fit"
+              >
+                {t.contact?.reserveButton || "Rezervă prima clasă"}
+                <ArrowUpRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
+              </Link>
+            </div>
           </motion.div>
         </motion.div>
 
         {/* Bottom Section - Legal */}
         <motion.div
-          className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6"
+          className="flex flex-col md:flex-row justify-between items-center gap-6"
           variants={itemVariants}
           initial="hidden"
           whileInView="visible"
@@ -259,6 +260,15 @@ export default function FooterPremium() {
           <p className="text-xs text-white/60">
             © 2024-2026 Alexia Fitness & Wellness Club. All rights reserved.
           </p>
+          <a
+            href="https://alexia.md"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-xs md:text-sm font-medium text-accent hover:gap-3 transition-all"
+          >
+            Visit Our Website
+            <ExternalLink className="w-3.5 h-3.5" />
+          </a>
           <div className="flex flex-col md:flex-row gap-6 text-xs text-white/60">
             <Link
               to="/privacy"
@@ -276,25 +286,6 @@ export default function FooterPremium() {
               Accessibility
             </Link>
           </div>
-        </motion.div>
-
-        {/* Website Link */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5, duration: 0.6 }}
-          className="mt-12 pt-8 border-t border-white/10 text-center"
-        >
-          <a
-            href="https://alexia.md"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-xs md:text-sm font-medium text-accent hover:gap-3 transition-all"
-          >
-            Visit Our Website
-            <ExternalLink className="w-3.5 h-3.5" />
-          </a>
         </motion.div>
       </div>
     </footer>

@@ -107,7 +107,7 @@ export default function Header() {
           {/* Hamburger / Close Toggle */}
           <button
             onClick={() => setMobileOpen(!mobileOpen)}
-            className="p-2 flex items-center justify-center w-8 h-8 relative z-50 hover:opacity-70 transition-opacity duration-300"
+            className={`p-2 flex items-center justify-center w-8 h-8 relative z-50 hover:opacity-70 transition-opacity duration-300 ${mobileOpen ? "text-primary" : ""}`}
             aria-label="Toggle menu"
           >
             {mobileOpen ? (
