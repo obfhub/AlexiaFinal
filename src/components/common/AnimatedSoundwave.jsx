@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 
 export default function AnimatedSoundwave({ className = "" }) {
-  // Create 5 bars with staggered animation
+
   const bars = Array.from({ length: 5 }, (_, i) => i);
 
   const barVariants = {
