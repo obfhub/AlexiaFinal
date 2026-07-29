@@ -84,12 +84,8 @@ export default function Header() {
           </Link>
         </div>
 
-        {/* Left spacer - hidden on mobile */}
-        <div className="hidden md:flex-1" />
-
-        {/* Right Side: Book Button + Language Switcher + Hamburger */}
-        <div className="flex items-center justify-end gap-3 md:gap-6 flex-1">
-          {/* Book Button - Shows when scrolled */}
+        {/* Left Side: Book Button - Visible only when scrolled */}
+        <div className="hidden md:flex items-center justify-start flex-1">
           <AnimatePresence>
             {scrolled && (
               <motion.div
@@ -100,14 +96,17 @@ export default function Header() {
               >
                 <Link
                   to="/choose-plan"
-                  className="hidden md:inline-block bg-primary text-primary-foreground px-4 py-2 text-xs tracking-[0.1em] uppercase font-medium rounded transition-all duration-300 hover:opacity-80 whitespace-nowrap"
+                  className="bg-primary text-primary-foreground px-4 py-2 text-xs tracking-[0.1em] uppercase font-medium rounded transition-all duration-300 hover:opacity-80"
                 >
                   {t.nav.bookClass}
                 </Link>
               </motion.div>
             )}
           </AnimatePresence>
+        </div>
 
+        {/* Right Side: Language Switcher + Hamburger */}
+        <div className="flex items-center justify-end gap-4 md:gap-6 flex-1">
           {/* Language switcher */}
           <div className="flex items-center gap-1.5 md:gap-2 text-[9px] md:text-[10px] tracking-[0.15em] uppercase font-body">
             {languages.map((l, i) => (
