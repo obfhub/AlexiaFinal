@@ -236,7 +236,7 @@ export default function FooterPremium() {
             <div className="space-y-3">
               <p className="font-body text-sm leading-relaxed text-white/80">
                 {t.footerBrand?.description ||
-                  "Club de fitness premium cu experiență de peste 18 ani."}
+                  "Club de fitness premium cu experiență de peste 19 ani."}
               </p>
               <Link
                 to="/choose-plan"
@@ -274,16 +274,16 @@ export default function FooterPremium() {
               to="/privacy"
               className="hover:text-accent transition-colors"
             >
-              Privacy Policy
+              {t.footer?.privacy || "Privacy Policy"}
             </Link>
             <Link to="/terms" className="hover:text-accent transition-colors">
-              Terms of Service
+              {t.footer?.terms || "Terms of Service"}
             </Link>
             <Link
               to="/accessibility"
               className="hover:text-accent transition-colors"
             >
-              Accessibility
+              {t.footer?.accessibility || "Accessibility"}
             </Link>
           </div>
         </motion.div>

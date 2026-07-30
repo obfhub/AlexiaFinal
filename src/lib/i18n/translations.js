@@ -113,7 +113,7 @@ export const translations = {
       hours: "Lun–Vin 7:00–21:00 · Sâm–Dum 9:00–18:00",
     },
     footerBrand: {
-      description: "Club de fitness premium cu experiență de peste 18 ani.",
+      description: "Club de fitness premium cu experiență de peste 19 ani.",
       social: "Social",
       instagram: "Instagram",
       facebook: "Facebook",
