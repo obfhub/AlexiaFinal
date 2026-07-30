@@ -13,19 +13,19 @@ import WhereToFindUs from "../components/location/WhereToFindUs";
 const IMAGES = {
   hero: "/heroalexia.png",
   classes: [
-    "https://media.base44.com/images/public/6a6694c080572115c141e8b7/ba8f3ebde_generated_image.png",
-    "https://media.base44.com/images/public/6a6694c080572115c141e8b7/9b1197d00_generated_image.png",
-    "https://media.base44.com/images/public/6a6694c080572115c141e8b7/99696e861_generated_image.png",
-    "https://media.base44.com/images/public/6a6694c080572115c141e8b7/6ed7fb813_generated_image.png",
+    "/media/base44/ba8f3ebde_generated_image.png",
+    "/media/base44/9b1197d00_generated_image.png",
+    "/media/base44/99696e861_generated_image.png",
+    "/media/base44/6ed7fb813_generated_image.png",
   ],
   facility: [
-    "https://media.base44.com/images/public/6a6694c080572115c141e8b7/b193141f3_generated_image.png",
-    "https://media.base44.com/images/public/6a6694c080572115c141e8b7/b47b3a1ca_generated_image.png",
-    "https://media.base44.com/images/public/6a6694c080572115c141e8b7/ba8f3ebde_generated_image.png",
-    "https://media.base44.com/images/public/6a6694c080572115c141e8b7/bd34b99df_generated_image.png",
-    "https://media.base44.com/images/public/6a6694c080572115c141e8b7/99696e861_generated_image.png",
-    "https://media.base44.com/images/public/6a6694c080572115c141e8b7/9b1197d00_generated_image.png",
-    "https://media.base44.com/images/public/6a6694c080572115c141e8b7/6ed7fb813_generated_image.png",
+    "/media/base44/b193141f3_generated_image.png",
+    "/media/base44/b47b3a1ca_generated_image.png",
+    "/media/base44/ba8f3ebde_generated_image.png",
+    "/media/base44/bd34b99df_generated_image.png",
+    "/media/base44/99696e861_generated_image.png",
+    "/media/base44/9b1197d00_generated_image.png",
+    "/media/base44/6ed7fb813_generated_image.png",
   ],
 };
 

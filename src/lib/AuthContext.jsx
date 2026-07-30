@@ -21,6 +21,14 @@ export const AuthProvider = ({ children }) => {
     try {
       setIsLoadingPublicSettings(true);
       setAuthError(null);
+      // Guard: if appId is not configured, stop early to avoid requests like /by-id/null
+      if (!appParams.appId) {
+        console.warn('App ID is not configured (appParams.appId is null). Skipping app state check.');
+        setAuthError({ type: 'missing_app_id', message: 'App ID is not configured' });
+        setIsLoadingPublicSettings(false);
+        setIsLoadingAuth(false);
+        return;
+      }
       
       // First, check app public settings (with token if available)
       // This will tell us if auth is required, user not registered, etc.
@@ -92,15 +100,8 @@ export const AuthProvider = ({ children }) => {
       // Now check if the user is authenticated
       setIsLoadingAuth(true);
 
-      // Check if db is available (Base44 SDK)
-      if (typeof window !== 'undefined' && window.db && window.db.auth && window.db.auth.me) {
-        const currentUser = await window.db.auth.me();
-        setUser(currentUser);
-        setIsAuthenticated(true);
-      } else {
-        console.warn('Base44 SDK not available');
-        setIsAuthenticated(false);
-      }
+      // No external SDK in this project; default to unauthenticated.
+      setIsAuthenticated(false);
       setIsLoadingAuth(false);
     } catch (error) {
       console.error('User auth check failed:', error);
@@ -121,28 +122,15 @@ export const AuthProvider = ({ children }) => {
     setUser(null);
     setIsAuthenticated(false);
 
-    if (typeof window !== 'undefined' && window.db && window.db.auth) {
-      if (shouldRedirect) {
-        // Use the SDK's logout method which handles token cleanup and redirect
-        window.db.auth.logout(window.location.href);
-      } else {
-        // Just remove the token without redirect
-        window.db.auth.logout();
-      }
-    } else {
-      console.warn('Base44 SDK not available for logout');
+    // No external SDK logout available; clear local state and redirect to home if requested
+    if (shouldRedirect) {
+      window.location.href = '/';
     }
   };
 
   const navigateToLogin = () => {
-    // Use the SDK's redirectToLogin method
-    if (typeof window !== 'undefined' && window.db && window.db.auth) {
-      window.db.auth.redirectToLogin(window.location.href);
-    } else {
-      console.warn('Base44 SDK not available for login redirect');
-      // Fallback: redirect to home
-      window.location.href = '/';
-    }
+    // No SDK redirect available; fallback to home
+    window.location.href = '/';
   };
 
   return (
