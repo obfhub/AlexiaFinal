@@ -1,7 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { useLanguage } from "@/lib/i18n/LanguageContext";
 
-const DECORATIVE_IMAGE = "https://media.base44.com/images/public/6a6694c080572115c141e8b7/b193141f3_generated_image.png";
+const DECORATIVE_IMAGE = "/media/base44/b193141f3_generated_image.png";
 
 export default function DecorativeSection() {
   const { t } = useLanguage();
