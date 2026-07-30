@@ -16,9 +16,24 @@ export default function Contact() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+
     try {
-      // Simulate form submission
-      await new Promise(resolve => setTimeout(resolve, 800));
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          name: formData.name,
+          phone: formData.phone,
+          plan: selectedPlan || "",
+          price: selectedPrice || "",
+        }),
+      });
+
+      const payload = await response.json().catch(() => ({}));
+
+      if (!response.ok) {
+        throw new Error(payload.error || "Could not submit form");
+      }
 
       toast({
         title: t.contactForm.success,
@@ -26,7 +41,7 @@ export default function Contact() {
       });
       setFormData({ name: "", phone: "" });
     } catch (error) {
-      toast({ title: t.contactForm.error, description: t.contactForm.errorMessage });
+      toast({ title: t.contactForm.error, description: error.message || t.contactForm.errorMessage });
     } finally {
       setLoading(false);
     }
