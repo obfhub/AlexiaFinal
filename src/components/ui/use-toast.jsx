@@ -2,7 +2,8 @@
 import { useState, useEffect } from "react";
 
 const TOAST_LIMIT = 20;
-const TOAST_REMOVE_DELAY = 4000;
+const TOAST_AUTO_DISMISS_DELAY = 4000;
+const TOAST_REMOVE_DELAY = 200;
 
 const actionTypes = {
   ADD_TOAST: "ADD_TOAST",
@@ -36,6 +37,19 @@ const addToRemoveQueue = (toastId) => {
   toastTimeouts.set(toastId, timeout);
 };
 
+const scheduleAutoDismiss = (toastId) => {
+  if (toastTimeouts.has(`${toastId}-auto`)) {
+    return;
+  }
+
+  const timeout = setTimeout(() => {
+    toastTimeouts.delete(`${toastId}-auto`);
+    dispatch({ type: actionTypes.DISMISS_TOAST, toastId });
+  }, TOAST_AUTO_DISMISS_DELAY);
+
+  toastTimeouts.set(`${toastId}-auto`, timeout);
+};
+
 const _clearFromRemoveQueue = (toastId) => {
   const timeout = toastTimeouts.get(toastId);
   if (timeout) {
@@ -47,6 +61,7 @@ const _clearFromRemoveQueue = (toastId) => {
 export const reducer = (state, action) => {
   switch (action.type) {
     case actionTypes.ADD_TOAST:
+      scheduleAutoDismiss(action.toast.id);
       return {
         ...state,
         toasts: [action.toast, ...state.toasts].slice(0, TOAST_LIMIT),
@@ -63,12 +78,13 @@ export const reducer = (state, action) => {
     case actionTypes.DISMISS_TOAST: {
       const { toastId } = action;
 
-      // ! Side effects ! - This could be extracted into a dismissToast() action,
-      // but I'll keep it here for simplicity
+      // trigger the closing animation and schedule removal
       if (toastId) {
+        _clearFromRemoveQueue(`${toastId}-auto`);
         addToRemoveQueue(toastId);
       } else {
         state.toasts.forEach((toast) => {
+          _clearFromRemoveQueue(`${toast.id}-auto`);
           addToRemoveQueue(toast.id);
         });
       }
