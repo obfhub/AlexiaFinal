@@ -1,47 +1,68 @@
-import axios from 'axios';
-
 /**
- * Create an axios client with custom configuration
- * @param {Object} config - Configuration object
- * @param {string} config.baseURL - Base URL for API
- * @param {Object} config.headers - Custom headers
- * @param {string} config.token - Auth token
- * @param {boolean} config.interceptResponses - Whether to intercept responses
- * @returns {Object} Axios instance with get/post methods
+ * Lightweight fetch-based client compatible with the previous axios wrapper.
+ * Provides `get` and `post` methods and returns either the response data
+ * or rejects with an object { status, message, data, extra_data } to match
+ * the previous error shape used across the app.
  */
 export const createAxiosClient = (config = {}) => {
   const {
     baseURL = '/api',
     headers = {},
     token = null,
-    interceptResponses = false
+    interceptResponses = false,
   } = config;
 
-  const instance = axios.create({
-    baseURL,
-    headers: {
+  const buildHeaders = (extra = {}) => {
+    return {
       'Content-Type': 'application/json',
       ...headers,
-      ...(token && { 'Authorization': `Bearer ${token}` })
+      ...(token && { Authorization: `Bearer ${token}` }),
+      ...extra,
+    };
+  };
+
+  const parseResponse = async (resp) => {
+    const text = await resp.text();
+    let data = null;
+    try {
+      data = text ? JSON.parse(text) : null;
+    } catch (e) {
+      data = text;
     }
-  });
+    return { status: resp.status, data };
+  };
 
-  // Add response interceptor if enabled
-  if (interceptResponses) {
-    instance.interceptors.response.use(
-      (response) => response.data,
-      (error) => {
-        // Extract error details from response
-        const errorData = {
-          status: error.response?.status,
-          message: error.response?.data?.message || error.message,
-          data: error.response?.data,
-          extra_data: error.response?.data?.extra_data
+  const request = async (method, url, body, opts = {}) => {
+    const fullUrl = url.startsWith('http') ? url : `${baseURL}${url}`;
+    try {
+      const resp = await fetch(fullUrl, {
+        method,
+        headers: buildHeaders(opts.headers),
+        body: body ? JSON.stringify(body) : undefined,
+      });
+
+      const { status, data } = await parseResponse(resp);
+
+      if (!resp.ok) {
+        const errorObj = {
+          status,
+          message: (data && data.message) || resp.statusText,
+          data,
+          extra_data: data?.extra_data,
         };
-        return Promise.reject(errorData);
+        return Promise.reject(errorObj);
       }
-    );
-  }
 
-  return instance;
+      return interceptResponses ? data : { status, data };
+    } catch (err) {
+      return Promise.reject({ status: null, message: err.message, data: null });
+    }
+  };
+
+  return {
+    get: (url, opts) => request('GET', url, null, opts),
+    post: (url, body, opts) => request('POST', url, body, opts),
+    // expose request for other HTTP verbs if needed
+    request,
+  };
 };
